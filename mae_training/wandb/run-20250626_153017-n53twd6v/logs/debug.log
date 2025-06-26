@@ -1,0 +1,22 @@
+2025-06-26 15:30:17,363 INFO    MainThread:460215 [wandb_setup.py:_flush():81] Current SDK version is 0.20.1
+2025-06-26 15:30:17,364 INFO    MainThread:460215 [wandb_setup.py:_flush():81] Configure stats pid to 460215
+2025-06-26 15:30:17,364 INFO    MainThread:460215 [wandb_setup.py:_flush():81] Loading settings from /home/conradb/.config/wandb/settings
+2025-06-26 15:30:17,364 INFO    MainThread:460215 [wandb_setup.py:_flush():81] Loading settings from /share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/wandb/settings
+2025-06-26 15:30:17,364 INFO    MainThread:460215 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2025-06-26 15:30:17,364 INFO    MainThread:460215 [wandb_init.py:setup_run_log_directory():703] Logging user logs to /share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/wandb/run-20250626_153017-n53twd6v/logs/debug.log
+2025-06-26 15:30:17,364 INFO    MainThread:460215 [wandb_init.py:setup_run_log_directory():704] Logging internal logs to /share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/wandb/run-20250626_153017-n53twd6v/logs/debug-internal.log
+2025-06-26 15:30:17,364 INFO    MainThread:460215 [wandb_init.py:init():831] calling init triggers
+2025-06-26 15:30:17,364 INFO    MainThread:460215 [wandb_init.py:init():836] wandb.init called with sweep_config: {}
+config: {'dataloader': {'seed': 42, 'webdataset': True, 'webdataset_root': '/scratch/SDF25/Hephaestus_Minicubes_v0_webdataset/', 'webdataset_write_processes': 4, 'webdataset_initial_buffer': 300, 'webdataset_shuffle_size': 100, 'num_workers': 4, 'max_samples_per_shard': 128, 'prefetch_factor': 2, 'persistent_workers': False, 'geomorphology_channels': ['insar_difference', 'insar_coherence', 'dem'], 'atmospheric_channels': ['total_column_water_vapour', 'surface_pressure', 'vertical_integral_of_temperature'], 'timeseries': False, 'timeseries_length': 1, 'timeseries_data': '../dataset/quality_timeseries_test.json', 'train_years': ['20140101', '20190531'], 'val_years': ['20190601', '20191231'], 'test_years': ['20200101', '20211231'], 'annotation_path': '../dataset/annotations_test.json', 'augment': True, 'image_size': 512, 'zarr_path': '/scratch/SDF25/Hephaestus_Minicubes_v0/', 'mask_target': 'union', 'task': 'classification', 'batch_size': 32, 'num_classes': 2}, 'augmentations': {'GaussianBlur': {'value': [0.1, 2.0], 'p': 0.3}, 'RandomResizedCrop': {'scale': [0.2, 1.0], 'interpolation': 1, 'p': 0.3}, 'HorizontalFlip': {'p': 0.3}, 'VerticalFlip': {'p': 0.3}, 'RandomRotation': {'p': 0.6}, 'ElasticTransform': {'p': 0.0}, 'Cutout': {'p': 0.0}, 'MultNoise': {'p': 0.0}, 'GaussianNoise': {'p': 0.0}}, 'model': {'ssl_method': 'mae', 'stage': 'linprobe', 'architecture': 'ViT', 'model': 'vit_base_patch16', 'global_pool': False, 'checkpoint_load_path': 'checkpoints/mae/pretraining/mae_vit_base_patch16/0crtm1js/mae_vit_base_patch16_epochs_40.pt'}, 'train': {'device': 'cpu', 'blr': 0.1, 'min_lr': 0, 'weight_decay': 0, 'epochs': 40, 'warmup_epochs': 10}, 'wandb': {'wandb': True, 'wandb_project': 'Hephaestus-minicubes-MAE-linprobe', 'wandb_entity': 'conradp-burton-gns-science'}, '_wandb': {}}
+2025-06-26 15:30:17,364 INFO    MainThread:460215 [wandb_init.py:init():872] starting backend
+2025-06-26 15:30:17,570 INFO    MainThread:460215 [wandb_init.py:init():875] sending inform_init request
+2025-06-26 15:30:17,586 INFO    MainThread:460215 [wandb_init.py:init():883] backend started and connected
+2025-06-26 15:30:17,588 INFO    MainThread:460215 [wandb_init.py:init():956] updated telemetry
+2025-06-26 15:30:17,593 INFO    MainThread:460215 [wandb_init.py:init():980] communicating run to backend with 90.0 second timeout
+2025-06-26 15:30:18,380 INFO    MainThread:460215 [wandb_init.py:init():1032] starting run threads in backend
+2025-06-26 15:30:18,468 INFO    MainThread:460215 [wandb_run.py:_console_start():2453] atexit reg
+2025-06-26 15:30:18,469 INFO    MainThread:460215 [wandb_run.py:_redirect():2301] redirect: wrap_raw
+2025-06-26 15:30:18,469 INFO    MainThread:460215 [wandb_run.py:_redirect():2370] Wrapping output streams.
+2025-06-26 15:30:18,469 INFO    MainThread:460215 [wandb_run.py:_redirect():2393] Redirects installed.
+2025-06-26 15:30:18,470 INFO    MainThread:460215 [wandb_init.py:init():1078] run started, returning control to user process
+2025-06-26 15:30:22,816 INFO    MsgRouterThr:460215 [mailbox.py:close():129] [no run ID] Closing mailbox, abandoning 1 handles.

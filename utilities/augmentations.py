@@ -1,12 +1,12 @@
 import albumentations as A
 
 def get_augmentations(config, image_size):
-    augmentations = config["augmentations"]
+    augmentations = config.augmentations
     independend_aug = []
     for k, v in augmentations.items():
         if k == "RandomResizedCrop":
             aug = A.augmentations.RandomResizedCrop(
-                height=image_size, width=image_size, p=v["p"]
+                size=[image_size, image_size], scale=v["scale"], interpolation=v["interpolation"], p=v["p"]
             )
         elif k == "ColorJitter":
             aug = A.augmentations.ColorJitter(

@@ -1,0 +1,15 @@
+{"time":"2025-06-26T15:28:10.320670779+12:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/wandb/run-20250626_152810-ap5vrvap/logs/debug-core.log"}
+{"time":"2025-06-26T15:28:10.76544266+12:00","level":"INFO","msg":"stream: created new stream","id":"ap5vrvap"}
+{"time":"2025-06-26T15:28:10.765470702+12:00","level":"INFO","msg":"stream: started","id":"ap5vrvap"}
+{"time":"2025-06-26T15:28:10.765474901+12:00","level":"INFO","msg":"handler: started","stream_id":"ap5vrvap"}
+{"time":"2025-06-26T15:28:10.765503428+12:00","level":"INFO","msg":"sender: started","stream_id":"ap5vrvap"}
+{"time":"2025-06-26T15:28:10.765515135+12:00","level":"INFO","msg":"writer: Do: started","stream_id":"ap5vrvap"}
+{"time":"2025-06-26T15:28:11.167193112+12:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-26T15:28:13.652532831+12:00","level":"INFO","msg":"stream: closing","id":"ap5vrvap"}
+{"time":"2025-06-26T15:28:13.65260542+12:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-26T15:28:13.652715715+12:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-26T15:28:14.740988661+12:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-26T15:28:15.18590353+12:00","level":"INFO","msg":"handler: closed","stream_id":"ap5vrvap"}
+{"time":"2025-06-26T15:28:15.185926734+12:00","level":"INFO","msg":"writer: Close: closed","stream_id":"ap5vrvap"}
+{"time":"2025-06-26T15:28:15.185934677+12:00","level":"INFO","msg":"sender: closed","stream_id":"ap5vrvap"}
+{"time":"2025-06-26T15:28:15.186424548+12:00","level":"INFO","msg":"stream: closed","id":"ap5vrvap"}

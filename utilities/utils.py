@@ -1,3 +1,4 @@
+import einops
 import glob
 import io
 import json
@@ -6,6 +7,7 @@ import numpy as np
 import os
 import random
 import toml
+from pathlib import Path
 
 # PyTorch/webdataset imports
 import torch
@@ -14,13 +16,43 @@ from torch.utils.data import IterableDataset
 import webdataset as wds
 
 # Local imports
-import webdataset_utils as wds_utils
+import utilities.webdataset_utils as wds_utils
+import utilities.augmentations as augmentations
 
 def load_global_config(filepath:str="project_config.toml"):
     return munch.munchify(toml.load(filepath))
 
 def get_dataset(config, mode="train", webdataset_write= False, verbose=False):
     return InSarDataset(config, mode, verbose=verbose, webdataset_write=webdataset_write)
+
+def augment(augmentations, insar_timeseries, mask_timeseries):    
+    """Augment the image with the specified augmentations."""
+    if not isinstance(insar_timeseries, np.ndarray):
+        insar_timeseries = insar_timeseries.numpy()
+    if not isinstance(mask_timeseries, np.ndarray):
+        mask_timeseries = mask_timeseries.numpy()
+    timeseries_length = insar_timeseries.shape[0]
+
+    # Rearrange bands and masks to match the expected format
+    # Timestep is given as different channels
+    bands = einops.rearrange(insar_timeseries, "t c h w -> h w (c t)")
+    masks = einops.rearrange(mask_timeseries, "t c h w -> h w (c t)")
+
+    transform = augmentations(image=bands, mask=masks)
+    augmented_bands = transform["image"]
+    augmented_masks = transform["mask"]
+
+    # Split time (T) back from channel (C*T)
+    augmented_bands = einops.rearrange(augmented_bands, "h w (c t) -> t c h w", t=timeseries_length)
+    augmented_masks = einops.rearrange(augmented_masks, "h w (c t) -> t c h w", t=timeseries_length)
+
+    # If not tensor convert to tensor
+    if not isinstance(augmented_bands, torch.Tensor):
+        augmented_bands = torch.tensor(augmented_bands)
+    if not isinstance(augmented_masks, torch.Tensor):
+        augmented_masks = torch.tensor(augmented_masks)
+
+    return augmented_bands, augmented_masks
 
 def normalize(image_timeseries, config, statistics_path="/home/conradb/git/hephaestus-minicubes-ssl/statistics.json"):
     """
@@ -63,10 +95,49 @@ def normalize(image_timeseries, config, statistics_path="/home/conradb/git/hepha
 
     return image_timeseries
 
+def create_checkpoint_directory(configs, wandb_run=None):
+    if wandb_run is None:
+        if configs.dataloader.timeseries:
+            checkpoint_path = (
+                Path("checkpoints")
+                / configs.model.ssl_method
+                / configs.model.stage
+                / configs.model.model.lower()
+                / str(config.dataloader.timeseries_length)
+                / str(datetime.datetime.now())
+            )
+        else:
+            checkpoint_path = (
+                Path("checkpoints")
+                / configs.model.ssl_method
+                / configs.model.stage
+                / configs.model.model.lower()
+                / str(datetime.datetime.now())
+            )
+    else:
+        if configs.dataloader.timeseries:
+            checkpoint_path = (
+                Path("checkpoints")
+                / configs.model.ssl_method
+                / configs.model.stage
+                / configs.model.model.lower()
+                / str(configs.dataloader.timeseries_length)
+                / str(wandb_run.id)
+            )
+        else:
+            checkpoint_path = (
+                Path("checkpoints")
+                / configs.model.ssl_method
+                / configs.model.stage
+                / configs.model.model.lower()
+                / str(str(wandb_run.id))
+            )
+            
+    checkpoint_path.mkdir(parents=True, exist_ok=True)
+    return checkpoint_path
+
 # run 3 times for train, val, test dataloaders
 def create_webdataset_dataloaders(configs, repeat=False, resample_shards=False):
-
-    configs = load_global_config(configs)
 
     print(configs.dataloader.train_years[0])
     
@@ -120,6 +191,10 @@ def create_webdataset_dataloaders(configs, repeat=False, resample_shards=False):
             # Select only the relevant geomorphology channels and atmospheric channels
             selected_channels = geomorphology_indices + atmospheric_indices
             image = image[:, selected_channels, :, :]  # Keep only the selected channels
+
+            if configs.dataloader.augment == True:
+                data_augmentations = augmentations.get_augmentations(configs, configs.dataloader.image_size)
+                image, label = augment(data_augmentations, image, label)
 
             image = normalize(image, configs)
             
@@ -366,10 +441,11 @@ def random_samples(sources, probs=None, longest=False):
 
 
 if __name__ == '__main__':
-    train, val, test = create_webdataset_dataloaders('../configs/config.toml')
+    configs = load_global_config('../configs/config.toml')
+    train, val, test = create_webdataset_dataloaders(configs)
 
-    for image, label, sample in val:
-        print(label)
+    for image, label, sample in train:
+        print(image.shape)
 
 
     

@@ -1,0 +1,134 @@
+here
+20140101
+[0, 1, 2]
+[3, 4, 5, 6, 7, 8]
+/scratch/SDF25/Hephaestus_Minicubes_v0_webdataset/1
+/scratch/SDF25/Hephaestus_Minicubes_v0_webdataset/1/train_pos/sample-train_pos-000003.tar
+000003
+/scratch/SDF25/Hephaestus_Minicubes_v0_webdataset/1/train_pos/sample-train_pos-{000000..000003}.tar
+Cuda available = False
+Random seed set as 42
+base lr: 1.50e-04
+actual lr: 1.87e-05
+AdamW (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.95)
+    capturable: False
+    decoupled_weight_decay: True
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 1.875e-05
+    maximize: False
+    weight_decay: 0.0
+
+Parameter Group 1
+    amsgrad: False
+    betas: (0.9, 0.95)
+    capturable: False
+    decoupled_weight_decay: True
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 1.875e-05
+    maximize: False
+    weight_decay: 0.05
+)
+/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/mae/utils.py:11: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self._scaler = torch.cuda.amp.GradScaler()
+/home/conradb/.conda/envs/torch2/lib/python3.11/site-packages/torch/amp/grad_scaler.py:136: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
+  warnings.warn(
+====================
+Starting MAE petraining for 40 epochs
+====================
+0it [00:00, ?it/s]/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/mae/engine_pretrain.py:60: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+/home/conradb/.conda/envs/torch2/lib/python3.11/site-packages/torch/amp/autocast_mode.py:266: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
+  warnings.warn(
+1it [00:12, 12.18s/it]
+Epoch 0/40, Batch Loss is 0.05031868815422058, end of epoch LR is 0.0
+2it [00:13,  6.52s/it]
+Epoch 1/40, Batch Loss is 0.04968765005469322, end of epoch LR is 1.8749999999999998e-06
+1it [00:07,  7.37s/it]
+Epoch 2/40, Batch Loss is 0.04742526635527611, end of epoch LR is 3.7499999999999997e-06
+1it [00:07,  7.98s/it]
+Epoch 3/40, Batch Loss is 0.045002531260252, end of epoch LR is 5.6249999999999995e-06
+1it [00:06,  6.65s/it]
+Epoch 4/40, Batch Loss is 0.04238850250840187, end of epoch LR is 7.499999999999999e-06
+1it [00:07,  7.86s/it]
+Epoch 5/40, Batch Loss is 0.03948778659105301, end of epoch LR is 9.375e-06
+1it [00:07,  7.01s/it]
+Epoch 6/40, Batch Loss is 0.03722462058067322, end of epoch LR is 1.1249999999999999e-05
+1it [00:06,  6.99s/it]
+Epoch 7/40, Batch Loss is 0.03550805523991585, end of epoch LR is 1.3124999999999999e-05
+1it [00:08,  8.94s/it]
+Epoch 8/40, Batch Loss is 0.03319071978330612, end of epoch LR is 1.4999999999999999e-05
+1it [00:08,  8.88s/it]
+Epoch 9/40, Batch Loss is 0.032326310873031616, end of epoch LR is 1.6874999999999997e-05
+Saving checkpoint
+1it [00:06,  6.47s/it]
+Epoch 10/40, Batch Loss is 0.03139248490333557, end of epoch LR is 1.875e-05
+1it [00:06,  6.67s/it]
+Epoch 11/40, Batch Loss is 0.029828853905200958, end of epoch LR is 1.869864276907756e-05
+1it [00:07,  7.15s/it]
+Epoch 12/40, Batch Loss is 0.028769776225090027, end of epoch LR is 1.8545133756879426e-05
+1it [00:06,  6.73s/it]
+Epoch 13/40, Batch Loss is 0.028325941413640976, end of epoch LR is 1.8291154840267064e-05
+1it [00:08,  8.18s/it]
+Epoch 14/40, Batch Loss is 0.02744292840361595, end of epoch LR is 1.793948866539938e-05
+1it [00:10, 10.03s/it]
+Epoch 15/40, Batch Loss is 0.026810843497514725, end of epoch LR is 1.7493988160479112e-05
+1it [00:08,  8.42s/it]
+Epoch 16/40, Batch Loss is 0.02607385255396366, end of epoch LR is 1.6959534322265132e-05
+1it [00:07,  7.15s/it]
+Epoch 17/40, Batch Loss is 0.025630377233028412, end of epoch LR is 1.634198273885057e-05
+1it [00:07,  7.01s/it]
+Epoch 18/40, Batch Loss is 0.02493334747850895, end of epoch LR is 1.5648099434614293e-05
+1it [00:10, 10.58s/it]
+Epoch 19/40, Batch Loss is 0.024699946865439415, end of epoch LR is 1.4885486740241934e-05
+Saving checkpoint
+1it [00:08,  8.48s/it]
+Epoch 20/40, Batch Loss is 0.02394977957010269, end of epoch LR is 1.40625e-05
+1it [00:07,  7.24s/it]
+Epoch 21/40, Batch Loss is 0.023943573236465454, end of epoch LR is 1.3188156028835627e-05
+1it [00:07,  7.12s/it]
+Epoch 22/40, Batch Loss is 0.023792460560798645, end of epoch LR is 1.2272034322265132e-05
+1it [00:07,  7.91s/it]
+Epoch 23/40, Batch Loss is 0.023166248574852943, end of epoch LR is 1.132417210141649e-05
+1it [00:07,  7.15s/it]
+Epoch 24/40, Batch Loss is 0.02280907705426216, end of epoch LR is 1.035495434313425e-05
+1it [00:07,  7.78s/it]
+Epoch 25/40, Batch Loss is 0.022803589701652527, end of epoch LR is 9.375000000000001e-06
+1it [00:07,  7.52s/it]
+Epoch 26/40, Batch Loss is 0.02256735786795616, end of epoch LR is 8.39504565686575e-06
+1it [00:06,  6.84s/it]
+Epoch 27/40, Batch Loss is 0.022765042260289192, end of epoch LR is 7.425827898583505e-06
+1it [00:07,  7.71s/it]
+Epoch 28/40, Batch Loss is 0.022146232426166534, end of epoch LR is 6.477965677734868e-06
+1it [00:08,  8.48s/it]
+Epoch 29/40, Batch Loss is 0.022082796320319176, end of epoch LR is 5.561843971164374e-06
+Saving checkpoint
+1it [00:07,  7.70s/it]
+Epoch 30/40, Batch Loss is 0.02192670851945877, end of epoch LR is 4.687500000000001e-06
+1it [00:07,  7.55s/it]
+Epoch 31/40, Batch Loss is 0.021850721910595894, end of epoch LR is 3.864513259758065e-06
+1it [00:06,  6.49s/it]
+Epoch 32/40, Batch Loss is 0.021926116198301315, end of epoch LR is 3.1019005653857068e-06
+1it [00:06,  6.27s/it]
+Epoch 33/40, Batch Loss is 0.021909410133957863, end of epoch LR is 2.408017261149431e-06
+1it [00:07,  7.27s/it]
+Epoch 34/40, Batch Loss is 0.022081652656197548, end of epoch LR is 1.7904656777348686e-06
+1it [00:06,  6.46s/it]
+Epoch 35/40, Batch Loss is 0.02157297544181347, end of epoch LR is 1.256011839520887e-06
+1it [00:07,  7.17s/it]
+Epoch 36/40, Batch Loss is 0.02191690169274807, end of epoch LR is 8.105113346006158e-07
+1it [00:08,  8.19s/it]
+Epoch 37/40, Batch Loss is 0.021827032789587975, end of epoch LR is 4.588451597329356e-07
+1it [00:06,  6.27s/it]
+Epoch 38/40, Batch Loss is 0.02177010476589203, end of epoch LR is 2.0486624312057166e-07
+1it [00:07,  7.17s/it]
+Epoch 39/40, Batch Loss is 0.021749351173639297, end of epoch LR is 5.135723092243686e-08
+Saving checkpoint
