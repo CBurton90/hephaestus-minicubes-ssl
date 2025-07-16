@@ -1,0 +1,17 @@
+{"time":"2025-07-15T10:55:27.326105189+12:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/wandb/run-20250715_105527-ji0c0g2h/logs/debug-core.log"}
+{"time":"2025-07-15T10:55:27.746569162+12:00","level":"INFO","msg":"stream: created new stream","id":"ji0c0g2h"}
+{"time":"2025-07-15T10:55:27.746590396+12:00","level":"INFO","msg":"stream: started","id":"ji0c0g2h"}
+{"time":"2025-07-15T10:55:27.746601582+12:00","level":"INFO","msg":"writer: Do: started","stream_id":"ji0c0g2h"}
+{"time":"2025-07-15T10:55:27.746605595+12:00","level":"INFO","msg":"sender: started","stream_id":"ji0c0g2h"}
+{"time":"2025-07-15T10:55:27.746640862+12:00","level":"INFO","msg":"handler: started","stream_id":"ji0c0g2h"}
+{"time":"2025-07-15T10:55:28.04820868+12:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-15T13:45:32.602144685+12:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-15T13:45:32.60224146+12:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-15T13:45:33.604001855+12:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact vit_large_patch16_epochs_90_blr_2_focalloss_linprobe","runtime_seconds":1.004314073},{"desc":"uploading output.log","runtime_seconds":0.708578138,"progress":"100.2KB/100.2KB"}],"total_operations":2}}
+{"time":"2025-07-15T13:46:33.636715877+12:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact vit_large_patch16_epochs_90_blr_2_focalloss_linprobe","runtime_seconds":61.037025246,"subtasks":[{"desc":"vit_large_patch16_epochs_90_blr_2_focalloss_linprobe.pt","runtime_seconds":59.944348632,"progress":"1.05GB/1.13GB"}]}],"total_operations":1}}
+{"time":"2025-07-15T13:46:39.681823965+12:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-15T13:46:40.036305411+12:00","level":"INFO","msg":"stream: closing","id":"ji0c0g2h"}
+{"time":"2025-07-15T13:46:40.036317861+12:00","level":"INFO","msg":"handler: closed","stream_id":"ji0c0g2h"}
+{"time":"2025-07-15T13:46:40.03632377+12:00","level":"INFO","msg":"writer: Close: closed","stream_id":"ji0c0g2h"}
+{"time":"2025-07-15T13:46:40.036326872+12:00","level":"INFO","msg":"sender: closed","stream_id":"ji0c0g2h"}
+{"time":"2025-07-15T13:46:40.036469714+12:00","level":"INFO","msg":"stream: closed","id":"ji0c0g2h"}

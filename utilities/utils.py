@@ -12,10 +12,14 @@ from pathlib import Path
 # PyTorch/webdataset imports
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 from torch.utils.data import IterableDataset
+from torcheval.metrics import MulticlassAccuracy, MulticlassF1Score, MulticlassPrecision, MulticlassRecall, MulticlassAUPRC, MulticlassAUROC
 import webdataset as wds
+import wandb
 
 # Local imports
+from losses.focal_loss import FocalLoss
 import utilities.webdataset_utils as wds_utils
 import utilities.augmentations as augmentations
 
@@ -24,6 +28,97 @@ def load_global_config(filepath:str="project_config.toml"):
 
 def get_dataset(config, mode="train", webdataset_write= False, verbose=False):
     return InSarDataset(config, mode, verbose=verbose, webdataset_write=webdataset_write)
+
+def log_image(image_log, samples, model, label, y=None, mask=None, mode='mae', stats_path='/home/conradb/git/hephaestus-minicubes-ssl/statistics.json'):
+    
+    statistics = json.load(open(stats_path, "r"))
+    phase_m = statistics['insar_difference']['mean']
+    phase_std = statistics['insar_difference']['std']
+    coh_m = statistics['insar_coherence']['mean']
+    coh_std = statistics['insar_coherence']['std']
+    dem_m = statistics['dem']['mean']
+    dem_std = statistics['dem']['std']
+
+    if mode == 'mae':
+        if label.any() == 1:
+            mask = mask.detach()
+            mask = mask.unsqueeze(-1).repeat(1, 1, model.patch_embed.patch_size[0]**2 *3)
+            mask = model.unpatchify(mask)
+            y = model.unpatchify(y)
+            im_masked = samples * (1 - mask)
+            im_paste = samples * (1 - mask) + y * mask
+
+            for i in range(label.shape[0]):
+                if label[i].item() == 1:
+                    originals = [samples[i, 0, :, :]*phase_std + phase_m, samples[i, 1, :, :]*coh_std + coh_m, samples[i, 2, :, :]*dem_std + dem_m]
+                    originals = [((sample - sample.min()) / (sample.max() - sample.min()))*255 for sample in originals]
+                    originals = [wandb.Image(sample.unsqueeze(0)) for sample in originals]
+                    masks = [im_masked[i, 0, :, :]*phase_std + phase_m, im_masked[i, 1, :, :]*coh_std + coh_m, im_masked[i, 2, :, :]*dem_std + dem_m]
+                    masks = [((mask - mask.min()) / (mask.max() - mask.min()))*255 for mask in masks]
+                    masks = [wandb.Image(mask.unsqueeze(0)) for mask in masks]
+                    recons = [y[i, 0, :, :]*phase_std + phase_m, y[i, 1, :, :]*coh_std + coh_m, y[i, 2, :, :]*dem_std + dem_m]
+                    recons = [((recon - recon.min()) / (recon.max() - recon.min()))*255 for recon in recons]
+                    recons = [wandb.Image(recon.unsqueeze(0)) for recon in recons]
+                    recons_vis = [im_paste[i, 0, :, :]*phase_std + phase_m, im_paste[i, 1, :, :]*coh_std + coh_m, im_paste[i, 2, :, :]*dem_std + dem_m]
+                    recons_vis = [((recon_vis - recon_vis.min()) / (recon_vis.max() - recon_vis.min()))*255 for recon_vis in recons_vis]
+                    recons_vis = [wandb.Image(recon_vis.unsqueeze(0)) for recon_vis in recons_vis]
+                    
+                    outputs = {
+                        'originals': originals,
+                        'masked': masks,
+                        'recon': recons,
+                        'recon + vis': recons_vis,
+                        }
+                        
+                    image_log.update(outputs)
+                    break
+
+    elif mode == 'linprobe':
+        if label.any() == 1:
+            for i in range(label.shape[0]):
+                if label[i].item() == 1:
+                    originals = [samples[i, 0, :, :]*phase_std + phase_m, samples[i, 1, :, :]*coh_std + coh_m, samples[i, 2, :, :]*dem_std + dem_m]
+                    originals = [((sample - sample.min()) / (sample.max() - sample.min()))*255 for sample in originals]
+                    originals = [wandb.Image(sample.unsqueeze(0)) for sample in originals]
+
+                    outputs = {
+                        'original image': originals,
+                        'image label': label[i].item(),
+                        'P(def) image' : F.softmax(y[i, :].unsqueeze(0), dim=1)[0, 1].item()
+                    }
+
+                    image_log.update(outputs)
+                    break
+
+    else:
+        print('please enter valid SSL stage - mae, linprobe, e2e-finetune')
+
+    return image_log
+
+def initialize_metrics():
+    acc = MulticlassAccuracy(num_classes=2, average=None)
+    f1 = MulticlassF1Score(num_classes=2, average=None)
+    prec = MulticlassPrecision(num_classes=2, average=None)
+    rec = MulticlassRecall(num_classes=2, average=None)
+    avg_prec = MulticlassAUPRC(num_classes=2, average=None)
+    auroc = MulticlassAUROC(num_classes=2, average=None)
+
+    metrics = [acc, f1, prec, rec, avg_prec, auroc]
+    return metrics
+
+def init_criterion(configs):
+    if configs.dataloader.num_classes == 2:
+        if configs.train.criterion.lower() == 'crossentropyloss':
+            criterion = torch.nn.CrossEntropyLoss()
+        elif configs.train.criterion.lower() == 'focalloss':
+            criterion = FocalLoss(gamma=2, alpha=0.25)
+        else:
+            print('Loss criterion not implemented')
+    else:
+        print('Num classes must be 2')
+
+    return criterion
+
 
 def augment(augmentations, insar_timeseries, mask_timeseries):    
     """Augment the image with the specified augmentations."""

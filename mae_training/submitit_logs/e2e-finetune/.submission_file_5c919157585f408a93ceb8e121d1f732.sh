@@ -1,0 +1,1 @@
+/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/submitit_logs/e2e-finetune/303100_submission.sh

@@ -1,0 +1,17 @@
+{"time":"2025-07-14T22:58:09.035912284+12:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/wandb/run-20250714_225808-9b1tsfc5/logs/debug-core.log"}
+{"time":"2025-07-14T22:58:09.487273226+12:00","level":"INFO","msg":"stream: created new stream","id":"9b1tsfc5"}
+{"time":"2025-07-14T22:58:09.487294847+12:00","level":"INFO","msg":"stream: started","id":"9b1tsfc5"}
+{"time":"2025-07-14T22:58:09.487303318+12:00","level":"INFO","msg":"writer: Do: started","stream_id":"9b1tsfc5"}
+{"time":"2025-07-14T22:58:09.487381945+12:00","level":"INFO","msg":"sender: started","stream_id":"9b1tsfc5"}
+{"time":"2025-07-14T22:58:09.487418317+12:00","level":"INFO","msg":"handler: started","stream_id":"9b1tsfc5"}
+{"time":"2025-07-14T22:58:09.913138175+12:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-15T00:10:00.289266155+12:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-15T00:10:00.289628055+12:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-15T00:10:01.252419107+12:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact vit_large_patch16_epochs_40_blr_1_crossentropyloss_linprobe","runtime_seconds":1.003881591},{"desc":"uploading output.log","runtime_seconds":0.650788607,"progress":"59.8KB/59.8KB"},{"desc":"uploading config.yaml","runtime_seconds":0.31685405,"progress":"3.0KB/3.0KB"}],"total_operations":3}}
+{"time":"2025-07-15T00:11:01.284707594+12:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact vit_large_patch16_epochs_40_blr_1_crossentropyloss_linprobe","runtime_seconds":61.03616972,"subtasks":[{"desc":"vit_large_patch16_epochs_40_blr_1_crossentropyloss_linprobe.pt","runtime_seconds":59.906614964,"progress":"1022.1MB/1.13GB"}]}],"total_operations":1}}
+{"time":"2025-07-15T00:11:10.946826813+12:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-15T00:11:11.280060998+12:00","level":"INFO","msg":"stream: closing","id":"9b1tsfc5"}
+{"time":"2025-07-15T00:11:11.280075906+12:00","level":"INFO","msg":"handler: closed","stream_id":"9b1tsfc5"}
+{"time":"2025-07-15T00:11:11.28008094+12:00","level":"INFO","msg":"writer: Close: closed","stream_id":"9b1tsfc5"}
+{"time":"2025-07-15T00:11:11.280159597+12:00","level":"INFO","msg":"sender: closed","stream_id":"9b1tsfc5"}
+{"time":"2025-07-15T00:11:11.280289595+12:00","level":"INFO","msg":"stream: closed","id":"9b1tsfc5"}

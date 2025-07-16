@@ -19,6 +19,7 @@ import wandb
 
 #import util.misc as misc
 from . import lr_sched
+import utilities.utils as utils
 
 
 def train_one_epoch(model: torch.nn.Module,
@@ -65,6 +66,7 @@ def train_one_epoch(model: torch.nn.Module,
         # running_loss += loss.detach().cpu().numpy()
         running_loss += loss_value
         counts += samples.shape[0]
+        print('COUNTS', counts)
 
         if not math.isfinite(loss_value):
             print("Loss is {}, stopping training".format(loss_value))
@@ -87,45 +89,46 @@ def train_one_epoch(model: torch.nn.Module,
         # metric_logger.update(lr=lr)
         if config.wandb.wandb:
             if not image_log:
-                statistics = json.load(open('/home/conradb/git/hephaestus-minicubes-ssl/statistics.json', "r"))
-                phase_m = statistics['insar_difference']['mean']
-                phase_std = statistics['insar_difference']['std']
-                coh_m = statistics['insar_coherence']['mean']
-                coh_std = statistics['insar_coherence']['std']
-                dem_m = statistics['dem']['mean']
-                dem_std = statistics['dem']['std']
-                if label.any() == 1:
-                    mask = mask.detach()
-                    mask = mask.unsqueeze(-1).repeat(1, 1, model.patch_embed.patch_size[0]**2 *3)
-                    mask = model.unpatchify(mask)
-                    y = model.unpatchify(y)
-                    im_masked = samples * (1 - mask)
-                    im_paste = samples * (1 - mask) + y * mask
+                image_log = utils.log_image(image_log, samples, model, label, y=y, mask=mask, mode='mae')
+                # statistics = json.load(open('/home/conradb/git/hephaestus-minicubes-ssl/statistics.json', "r"))
+                # phase_m = statistics['insar_difference']['mean']
+                # phase_std = statistics['insar_difference']['std']
+                # coh_m = statistics['insar_coherence']['mean']
+                # coh_std = statistics['insar_coherence']['std']
+                # dem_m = statistics['dem']['mean']
+                # dem_std = statistics['dem']['std']
+                # if label.any() == 1:
+                #     mask = mask.detach()
+                #     mask = mask.unsqueeze(-1).repeat(1, 1, model.patch_embed.patch_size[0]**2 *3)
+                #     mask = model.unpatchify(mask)
+                #     y = model.unpatchify(y)
+                #     im_masked = samples * (1 - mask)
+                #     im_paste = samples * (1 - mask) + y * mask
 
-                    for i in range(label.shape[0]):
-                        if label[i].item() == 1:
-                            originals = [samples[i, 0, :, :]*phase_std + phase_m, samples[i, 1, :, :]*coh_std + coh_m, samples[i, 2, :, :]*dem_std + dem_m]
-                            originals = [((sample - sample.min()) / (sample.max() - sample.min()))*255 for sample in originals]
-                            originals = [wandb.Image(sample.unsqueeze(0)) for sample in originals]
-                            masks = [im_masked[i, 0, :, :]*phase_std + phase_m, im_masked[i, 1, :, :]*coh_std + coh_m, im_masked[i, 2, :, :]*dem_std + dem_m]
-                            masks = [((mask - mask.min()) / (mask.max() - mask.min()))*255 for mask in masks]
-                            masks = [wandb.Image(mask.unsqueeze(0)) for mask in masks]
-                            recons = [y[i, 0, :, :]*phase_std + phase_m, y[i, 1, :, :]*coh_std + coh_m, y[i, 2, :, :]*dem_std + dem_m]
-                            recons = [((recon - recon.min()) / (recon.max() - recon.min()))*255 for recon in recons]
-                            recons = [wandb.Image(recon.unsqueeze(0)) for recon in recons]
-                            recons_vis = [im_paste[i, 0, :, :]*phase_std + phase_m, im_paste[i, 1, :, :]*coh_std + coh_m, im_paste[i, 2, :, :]*dem_std + dem_m]
-                            recons_vis = [((recon_vis - recon_vis.min()) / (recon_vis.max() - recon_vis.min()))*255 for recon_vis in recons_vis]
-                            recons_vis = [wandb.Image(recon_vis.unsqueeze(0)) for recon_vis in recons_vis]
+                #     for i in range(label.shape[0]):
+                #         if label[i].item() == 1:
+                #             originals = [samples[i, 0, :, :]*phase_std + phase_m, samples[i, 1, :, :]*coh_std + coh_m, samples[i, 2, :, :]*dem_std + dem_m]
+                #             originals = [((sample - sample.min()) / (sample.max() - sample.min()))*255 for sample in originals]
+                #             originals = [wandb.Image(sample.unsqueeze(0)) for sample in originals]
+                #             masks = [im_masked[i, 0, :, :]*phase_std + phase_m, im_masked[i, 1, :, :]*coh_std + coh_m, im_masked[i, 2, :, :]*dem_std + dem_m]
+                #             masks = [((mask - mask.min()) / (mask.max() - mask.min()))*255 for mask in masks]
+                #             masks = [wandb.Image(mask.unsqueeze(0)) for mask in masks]
+                #             recons = [y[i, 0, :, :]*phase_std + phase_m, y[i, 1, :, :]*coh_std + coh_m, y[i, 2, :, :]*dem_std + dem_m]
+                #             recons = [((recon - recon.min()) / (recon.max() - recon.min()))*255 for recon in recons]
+                #             recons = [wandb.Image(recon.unsqueeze(0)) for recon in recons]
+                #             recons_vis = [im_paste[i, 0, :, :]*phase_std + phase_m, im_paste[i, 1, :, :]*coh_std + coh_m, im_paste[i, 2, :, :]*dem_std + dem_m]
+                #             recons_vis = [((recon_vis - recon_vis.min()) / (recon_vis.max() - recon_vis.min()))*255 for recon_vis in recons_vis]
+                #             recons_vis = [wandb.Image(recon_vis.unsqueeze(0)) for recon_vis in recons_vis]
 
-                            outputs = {
-                                'originals': originals,
-                                'masked': masks,
-                                'recon': recons,
-                                'recon + vis': recons_vis,
-                            }
+                #             outputs = {
+                #                 'originals': originals,
+                #                 'masked': masks,
+                #                 'recon': recons,
+                #                 'recon + vis': recons_vis,
+                #             }
 
-                            image_log.update(outputs)
-                            break
+                #             image_log.update(outputs)
+                #             break
                     
 
         # loss_value_reduce = misc.all_reduce_mean(loss_value)
@@ -136,7 +139,7 @@ def train_one_epoch(model: torch.nn.Module,
             epoch_1000x = int((data_iter_step / len(data_loader) + epoch) * 1000)
             log_writer.add_scalar('train_loss', loss_value_reduce, epoch_1000x)
             log_writer.add_scalar('lr', lr, epoch_1000x)
-
+            
     epoch_loss = running_loss / counts
     eob_lr = lr # end of batch/epoch LR
 

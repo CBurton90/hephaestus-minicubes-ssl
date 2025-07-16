@@ -1,0 +1,769 @@
+GPU 0: NVIDIA A100 80GB PCIe (UUID: GPU-85839c85-6fb7-d4a8-c829-21bc5691889d)
+  MIG 3g.40gb     Device  0: (UUID: MIG-a846abdf-6a7c-50d1-abec-157ba37a6d16)
+  MIG 2g.20gb     Device  1: (UUID: MIG-3a87974e-bc4d-5a4f-8011-3737c4a5e0f8)
+  MIG 2g.20gb     Device  2: (UUID: MIG-656f3036-8a5e-5ce7-ba5b-c9b2c45a5cfa)
+/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/mae/utils.py:11: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self._scaler = torch.cuda.amp.GradScaler()
+====================
+Initializing MAE linear probing
+====================
+20150101
+[0, 1, 2]
+[3, 4, 5, 6, 7, 8]
+/scratch/SDF25/Imagery/Hephaestus_Minicubes_v0_webdataset/1
+/scratch/SDF25/Imagery/Hephaestus_Minicubes_v0_webdataset/1/train_pos/sample-train_pos-000007.tar
+000007
+/scratch/SDF25/Imagery/Hephaestus_Minicubes_v0_webdataset/1/train_pos/sample-train_pos-{000000..000007}.tar
+Cuda available = True
+Random seed set as 42
+Load pre-trained checkpoint from: checkpoints/mae/pretraining/mae_vit_large_patch16/vbe2p57j/mae_vit_large_patch16_epochs_800.pt
+_IncompatibleKeys(missing_keys=['head.weight', 'head.bias'], unexpected_keys=['mask_token', 'decoder_pos_embed', 'decoder_embed.weight', 'decoder_embed.bias', 'decoder_blocks.0.norm1.weight', 'decoder_blocks.0.norm1.bias', 'decoder_blocks.0.attn.qkv.weight', 'decoder_blocks.0.attn.qkv.bias', 'decoder_blocks.0.attn.proj.weight', 'decoder_blocks.0.attn.proj.bias', 'decoder_blocks.0.norm2.weight', 'decoder_blocks.0.norm2.bias', 'decoder_blocks.0.mlp.fc1.weight', 'decoder_blocks.0.mlp.fc1.bias', 'decoder_blocks.0.mlp.fc2.weight', 'decoder_blocks.0.mlp.fc2.bias', 'decoder_blocks.1.norm1.weight', 'decoder_blocks.1.norm1.bias', 'decoder_blocks.1.attn.qkv.weight', 'decoder_blocks.1.attn.qkv.bias', 'decoder_blocks.1.attn.proj.weight', 'decoder_blocks.1.attn.proj.bias', 'decoder_blocks.1.norm2.weight', 'decoder_blocks.1.norm2.bias', 'decoder_blocks.1.mlp.fc1.weight', 'decoder_blocks.1.mlp.fc1.bias', 'decoder_blocks.1.mlp.fc2.weight', 'decoder_blocks.1.mlp.fc2.bias', 'decoder_blocks.2.norm1.weight', 'decoder_blocks.2.norm1.bias', 'decoder_blocks.2.attn.qkv.weight', 'decoder_blocks.2.attn.qkv.bias', 'decoder_blocks.2.attn.proj.weight', 'decoder_blocks.2.attn.proj.bias', 'decoder_blocks.2.norm2.weight', 'decoder_blocks.2.norm2.bias', 'decoder_blocks.2.mlp.fc1.weight', 'decoder_blocks.2.mlp.fc1.bias', 'decoder_blocks.2.mlp.fc2.weight', 'decoder_blocks.2.mlp.fc2.bias', 'decoder_blocks.3.norm1.weight', 'decoder_blocks.3.norm1.bias', 'decoder_blocks.3.attn.qkv.weight', 'decoder_blocks.3.attn.qkv.bias', 'decoder_blocks.3.attn.proj.weight', 'decoder_blocks.3.attn.proj.bias', 'decoder_blocks.3.norm2.weight', 'decoder_blocks.3.norm2.bias', 'decoder_blocks.3.mlp.fc1.weight', 'decoder_blocks.3.mlp.fc1.bias', 'decoder_blocks.3.mlp.fc2.weight', 'decoder_blocks.3.mlp.fc2.bias', 'decoder_blocks.4.norm1.weight', 'decoder_blocks.4.norm1.bias', 'decoder_blocks.4.attn.qkv.weight', 'decoder_blocks.4.attn.qkv.bias', 'decoder_blocks.4.attn.proj.weight', 'decoder_blocks.4.attn.proj.bias', 'decoder_blocks.4.norm2.weight', 'decoder_blocks.4.norm2.bias', 'decoder_blocks.4.mlp.fc1.weight', 'decoder_blocks.4.mlp.fc1.bias', 'decoder_blocks.4.mlp.fc2.weight', 'decoder_blocks.4.mlp.fc2.bias', 'decoder_blocks.5.norm1.weight', 'decoder_blocks.5.norm1.bias', 'decoder_blocks.5.attn.qkv.weight', 'decoder_blocks.5.attn.qkv.bias', 'decoder_blocks.5.attn.proj.weight', 'decoder_blocks.5.attn.proj.bias', 'decoder_blocks.5.norm2.weight', 'decoder_blocks.5.norm2.bias', 'decoder_blocks.5.mlp.fc1.weight', 'decoder_blocks.5.mlp.fc1.bias', 'decoder_blocks.5.mlp.fc2.weight', 'decoder_blocks.5.mlp.fc2.bias', 'decoder_blocks.6.norm1.weight', 'decoder_blocks.6.norm1.bias', 'decoder_blocks.6.attn.qkv.weight', 'decoder_blocks.6.attn.qkv.bias', 'decoder_blocks.6.attn.proj.weight', 'decoder_blocks.6.attn.proj.bias', 'decoder_blocks.6.norm2.weight', 'decoder_blocks.6.norm2.bias', 'decoder_blocks.6.mlp.fc1.weight', 'decoder_blocks.6.mlp.fc1.bias', 'decoder_blocks.6.mlp.fc2.weight', 'decoder_blocks.6.mlp.fc2.bias', 'decoder_blocks.7.norm1.weight', 'decoder_blocks.7.norm1.bias', 'decoder_blocks.7.attn.qkv.weight', 'decoder_blocks.7.attn.qkv.bias', 'decoder_blocks.7.attn.proj.weight', 'decoder_blocks.7.attn.proj.bias', 'decoder_blocks.7.norm2.weight', 'decoder_blocks.7.norm2.bias', 'decoder_blocks.7.mlp.fc1.weight', 'decoder_blocks.7.mlp.fc1.bias', 'decoder_blocks.7.mlp.fc2.weight', 'decoder_blocks.7.mlp.fc2.bias', 'decoder_norm.weight', 'decoder_norm.bias', 'decoder_pred.weight', 'decoder_pred.bias'])
+Model = VisionTransformer(
+  (patch_embed): PatchEmbed(
+    (proj): Conv2d(3, 1024, kernel_size=(16, 16), stride=(16, 16))
+    (norm): Identity()
+  )
+  (pos_drop): Dropout(p=0.0, inplace=False)
+  (patch_drop): Identity()
+  (norm_pre): Identity()
+  (blocks): Sequential(
+    (0): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (1): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (2): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (3): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (4): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (5): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (6): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (7): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (8): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (9): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (10): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (11): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (12): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (13): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (14): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (15): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (16): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (17): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (18): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (19): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (20): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (21): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (22): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (23): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+  )
+  (norm): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+  (fc_norm): Identity()
+  (head_drop): Dropout(p=0.0, inplace=False)
+  (head): Sequential(
+    (0): BatchNorm1d(1024, eps=1e-06, momentum=0.1, affine=False, track_running_stats=True)
+    (1): Linear(in_features=1024, out_features=2, bias=True)
+  )
+)
+number of params (M): 2050.00
+base lr: 1.00e+00
+actual lr: 4.38e-01
+LARS (
+Parameter Group 0
+    lr: 0.4375
+    momentum: 0.9
+    trust_coefficient: 0.001
+    weight_decay: 0
+)
+Starting linprobe training for 40 epochs
+0it [00:00, ?it/s]/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/mae/engine_finetune.py:73: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+1it [00:05,  5.39s/it]1it [00:05,  5.39s/it]
+output tensor(0.5332, device='cuda:0', dtype=torch.float16, grad_fn=<SelectBackward0>)
+Epoch 0/40, Train Epoch Loss is 0.07202516496181488, end of epoch LR is 0.0
+Train F1 score (Non Deformation):  tensor(0.6947, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.7752, device='cuda:0')
+0it [00:00, ?it/s]/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/mae/engine_finetune.py:175: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+/home/conradb/.conda/envs/torch2/lib/python3.11/site-packages/torcheval/metrics/functional/classification/accuracy.py:275: UserWarning: The reduce argument of torch.scatter with Tensor src is deprecated and will be removed in a future PyTorch release. Use torch.scatter_reduce instead for more reduction options. (Triggered internally at /pytorch/aten/src/ATen/native/TensorAdvancedIndexing.cpp:232.)
+  num_correct = mask.new_zeros(num_classes).scatter_(0, target, mask, reduce="add")
+/home/conradb/.conda/envs/torch2/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+1it [00:08,  8.20s/it]2it [00:10,  4.50s/it]3it [00:11,  3.14s/it]4it [00:13,  2.51s/it]5it [00:14,  2.16s/it]6it [00:16,  1.94s/it]7it [00:17,  1.81s/it]8it [00:19,  1.72s/it]9it [00:20,  1.66s/it]10it [00:22,  1.62s/it]11it [00:23,  1.59s/it]12it [00:25,  1.58s/it]13it [00:26,  1.56s/it]14it [00:28,  1.55s/it]15it [00:30,  1.55s/it]16it [00:31,  1.54s/it]17it [00:32,  1.26s/it]18it [00:32,  1.07s/it]19it [00:33,  1.07it/s]20it [00:34,  1.19it/s]21it [00:34,  1.30it/s]22it [00:35,  1.38it/s]23it [00:35,  1.46it/s]24it [00:36,  1.51it/s]24it [00:36,  1.52s/it]
+WARNING:root:tensor([[1]], device='cuda:0') classes have zero instances in both the predictions and the ground truth labels. Precision is still logged as zero.
+Val Epoch Loss is 0.043282134303202234
+Val Acc (Non Deformation):  tensor(1., device='cuda:0')
+Val Acc (Deformation):  tensor(0., device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9450, device='cuda:0')
+Val F1 score (Deformation):  tensor(0., device='cuda:0')
+0it [00:00, ?it/s]1it [00:04,  4.78s/it]1it [00:04,  4.79s/it]
+output tensor(0.5591, device='cuda:0', dtype=torch.float16, grad_fn=<SelectBackward0>)
+Epoch 1/40, Train Epoch Loss is 0.08246572315692902, end of epoch LR is 0.04375
+Train F1 score (Non Deformation):  tensor(0.5657, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.6560, device='cuda:0')
+0it [00:00, ?it/s]1it [00:05,  5.69s/it]2it [00:07,  3.31s/it]3it [00:08,  2.50s/it]4it [00:10,  2.12s/it]5it [00:11,  1.91s/it]6it [00:13,  1.78s/it]7it [00:14,  1.70s/it]8it [00:16,  1.65s/it]9it [00:18,  1.61s/it]10it [00:19,  1.59s/it]11it [00:21,  1.57s/it]12it [00:22,  1.56s/it]13it [00:24,  1.55s/it]14it [00:25,  1.54s/it]15it [00:27,  1.54s/it]16it [00:28,  1.54s/it]17it [00:29,  1.26s/it]18it [00:29,  1.06s/it]19it [00:30,  1.08it/s]20it [00:31,  1.20it/s]21it [00:31,  1.31it/s]22it [00:32,  1.39it/s]23it [00:33,  1.46it/s]24it [00:33,  1.51it/s]24it [00:33,  1.41s/it]
+WARNING:root:tensor([[1]], device='cuda:0') classes have zero instances in both the predictions and the ground truth labels. Precision is still logged as zero.
+Val Epoch Loss is 0.042611695903663836
+Val Acc (Non Deformation):  tensor(1., device='cuda:0')
+Val Acc (Deformation):  tensor(0., device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9450, device='cuda:0')
+Val F1 score (Deformation):  tensor(0., device='cuda:0')
+0it [00:00, ?it/s]1it [00:04,  4.51s/it]1it [00:04,  4.51s/it]
+output tensor(0.6826, device='cuda:0', dtype=torch.float16, grad_fn=<SelectBackward0>)
+Epoch 2/40, Train Epoch Loss is 0.07794299721717834, end of epoch LR is 0.0875
+Train F1 score (Non Deformation):  tensor(0.6286, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.6723, device='cuda:0')
+0it [00:00, ?it/s]1it [00:05,  5.33s/it]2it [00:06,  3.10s/it]3it [00:08,  2.38s/it]4it [00:09,  2.05s/it]5it [00:11,  1.86s/it]6it [00:12,  1.75s/it]7it [00:14,  1.68s/it]8it [00:16,  1.63s/it]9it [00:17,  1.60s/it]10it [00:19,  1.58s/it]11it [00:20,  1.56s/it]12it [00:22,  1.55s/it]13it [00:23,  1.55s/it]14it [00:25,  1.54s/it]15it [00:26,  1.54s/it]16it [00:28,  1.54s/it]17it [00:28,  1.26s/it]18it [00:29,  1.06s/it]19it [00:30,  1.08it/s]20it [00:30,  1.20it/s]21it [00:31,  1.30it/s]22it [00:31,  1.39it/s]23it [00:32,  1.46it/s]24it [00:33,  1.51it/s]24it [00:33,  1.39s/it]
+WARNING:root:tensor([[1]], device='cuda:0') classes have zero instances in both the predictions and the ground truth labels. Precision is still logged as zero.
+Val Epoch Loss is 0.042031359781200685
+Val Acc (Non Deformation):  tensor(1., device='cuda:0')
+Val Acc (Deformation):  tensor(0., device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9450, device='cuda:0')
+Val F1 score (Deformation):  tensor(0., device='cuda:0')
+0it [00:00, ?it/s]1it [00:04,  4.44s/it]1it [00:04,  4.44s/it]
+output tensor(0.5210, device='cuda:0', dtype=torch.float16, grad_fn=<SelectBackward0>)
+Epoch 3/40, Train Epoch Loss is 0.07114030420780182, end of epoch LR is 0.13125
+Train F1 score (Non Deformation):  tensor(0.6602, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.7107, device='cuda:0')
+0it [00:00, ?it/s]1it [00:06,  6.74s/it]2it [00:08,  3.68s/it]3it [00:09,  2.70s/it]4it [00:11,  2.24s/it]5it [00:12,  1.98s/it]6it [00:14,  1.83s/it]7it [00:15,  1.73s/it]8it [00:17,  1.67s/it]9it [00:18,  1.63s/it]10it [00:20,  1.60s/it]11it [00:22,  1.58s/it]12it [00:23,  1.56s/it]13it [00:25,  1.55s/it]14it [00:26,  1.55s/it]15it [00:28,  1.54s/it]16it [00:29,  1.54s/it]17it [00:30,  1.26s/it]18it [00:30,  1.06s/it]19it [00:31,  1.07it/s]20it [00:32,  1.20it/s]21it [00:32,  1.30it/s]22it [00:33,  1.39it/s]23it [00:34,  1.46it/s]24it [00:34,  1.51it/s]24it [00:34,  1.45s/it]
+WARNING:root:tensor([[1]], device='cuda:0') classes have zero instances in both the predictions and the ground truth labels. Precision is still logged as zero.
+Val Epoch Loss is 0.041609003907069564
+Val Acc (Non Deformation):  tensor(1., device='cuda:0')
+Val Acc (Deformation):  tensor(0., device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9450, device='cuda:0')
+Val F1 score (Deformation):  tensor(0., device='cuda:0')
+0it [00:00, ?it/s]1it [00:05,  5.07s/it]1it [00:05,  5.07s/it]
+output tensor(0.5161, device='cuda:0', dtype=torch.float16, grad_fn=<SelectBackward0>)
+Epoch 4/40, Train Epoch Loss is 0.07311546057462692, end of epoch LR is 0.175
+Train F1 score (Non Deformation):  tensor(0.6531, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.7302, device='cuda:0')
+0it [00:00, ?it/s]1it [00:04,  4.69s/it]2it [00:06,  2.83s/it]3it [00:07,  2.24s/it]4it [00:09,  1.96s/it]5it [00:10,  1.81s/it]6it [00:12,  1.71s/it]7it [00:13,  1.65s/it]8it [00:15,  1.61s/it]9it [00:16,  1.59s/it]10it [00:18,  1.57s/it]11it [00:20,  1.56s/it]12it [00:21,  1.55s/it]13it [00:23,  1.55s/it]14it [00:24,  1.54s/it]15it [00:26,  1.54s/it]16it [00:27,  1.54s/it]17it [00:28,  1.26s/it]18it [00:28,  1.06s/it]19it [00:29,  1.08it/s]20it [00:30,  1.20it/s]21it [00:30,  1.30it/s]22it [00:31,  1.38it/s]23it [00:31,  1.46it/s]24it [00:32,  1.51it/s]24it [00:32,  1.36s/it]
+Val Epoch Loss is 0.041461305848012366
+Val Acc (Non Deformation):  tensor(0.9984, device='cuda:0')
+Val Acc (Deformation):  tensor(0., device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9443, device='cuda:0')
+Val F1 score (Deformation):  tensor(0., device='cuda:0')
+0it [00:00, ?it/s]1it [00:04,  4.90s/it]1it [00:04,  4.90s/it]
+output tensor(0.5269, device='cuda:0', dtype=torch.float16, grad_fn=<SelectBackward0>)
+Epoch 5/40, Train Epoch Loss is 0.07224788516759872, end of epoch LR is 0.21875
+Train F1 score (Non Deformation):  tensor(0.6341, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.7887, device='cuda:0')
+0it [00:00, ?it/s]1it [00:05,  5.76s/it]2it [00:07,  3.27s/it]3it [00:08,  2.48s/it]4it [00:10,  2.10s/it]5it [00:11,  1.90s/it]6it [00:13,  1.77s/it]7it [00:14,  1.69s/it]8it [00:16,  1.64s/it]9it [00:18,  1.61s/it]10it [00:19,  1.58s/it]11it [00:21,  1.57s/it]12it [00:22,  1.56s/it]13it [00:24,  1.55s/it]14it [00:25,  1.54s/it]15it [00:27,  1.54s/it]16it [00:28,  1.54s/it]17it [00:29,  1.26s/it]18it [00:29,  1.06s/it]19it [00:30,  1.08it/s]20it [00:31,  1.20it/s]21it [00:31,  1.30it/s]22it [00:32,  1.39it/s]23it [00:33,  1.46it/s]24it [00:33,  1.51it/s]24it [00:33,  1.41s/it]
+Val Epoch Loss is 0.04179662466049194
+Val Acc (Non Deformation):  tensor(0.9948, device='cuda:0')
+Val Acc (Deformation):  tensor(0.0179, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9434, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.0338, device='cuda:0')
+0it [00:00, ?it/s]1it [00:04,  4.44s/it]1it [00:04,  4.44s/it]
+output tensor(0.5713, device='cuda:0', dtype=torch.float16, grad_fn=<SelectBackward0>)
+Epoch 6/40, Train Epoch Loss is 0.06417056173086166, end of epoch LR is 0.2625
+Train F1 score (Non Deformation):  tensor(0.6735, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.7460, device='cuda:0')
+0it [00:00, ?it/s]1it [00:06,  6.29s/it]2it [00:07,  3.49s/it]3it [00:09,  2.60s/it]4it [00:10,  2.18s/it]5it [00:12,  1.94s/it]6it [00:13,  1.80s/it]7it [00:15,  1.72s/it]8it [00:17,  1.66s/it]9it [00:18,  1.62s/it]10it [00:20,  1.59s/it]11it [00:21,  1.57s/it]12it [00:23,  1.56s/it]13it [00:24,  1.55s/it]14it [00:26,  1.55s/it]15it [00:27,  1.54s/it]16it [00:29,  1.54s/it]17it [00:29,  1.26s/it]18it [00:30,  1.06s/it]19it [00:31,  1.08it/s]20it [00:31,  1.20it/s]21it [00:32,  1.30it/s]22it [00:32,  1.39it/s]23it [00:33,  1.46it/s]24it [00:34,  1.51it/s]24it [00:34,  1.43s/it]
+Val Epoch Loss is 0.042819447349756956
+Val Acc (Non Deformation):  tensor(0.9457, device='cuda:0')
+Val Acc (Deformation):  tensor(0.0673, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9208, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.0877, device='cuda:0')
+0it [00:00, ?it/s]1it [00:04,  4.96s/it]1it [00:04,  4.96s/it]
+output tensor(0.6143, device='cuda:0', dtype=torch.float16, grad_fn=<SelectBackward0>)
+Epoch 7/40, Train Epoch Loss is 0.06663089245557785, end of epoch LR is 0.30625
+Train F1 score (Non Deformation):  tensor(0.6118, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.7626, device='cuda:0')
+0it [00:00, ?it/s]1it [00:06,  6.95s/it]2it [00:08,  3.76s/it]3it [00:10,  2.74s/it]4it [00:11,  2.26s/it]5it [00:13,  2.00s/it]6it [00:14,  1.84s/it]7it [00:16,  1.74s/it]8it [00:17,  1.67s/it]9it [00:19,  1.63s/it]10it [00:20,  1.60s/it]11it [00:22,  1.58s/it]12it [00:23,  1.56s/it]13it [00:25,  1.55s/it]14it [00:26,  1.55s/it]15it [00:28,  1.54s/it]16it [00:29,  1.54s/it]17it [00:30,  1.26s/it]18it [00:31,  1.06s/it]19it [00:31,  1.08it/s]20it [00:32,  1.20it/s]21it [00:32,  1.30it/s]22it [00:33,  1.39it/s]23it [00:34,  1.46it/s]24it [00:34,  1.51it/s]24it [00:34,  1.45s/it]
+Val Epoch Loss is 0.044769387071331344
+Val Acc (Non Deformation):  tensor(0.8315, device='cuda:0')
+Val Acc (Deformation):  tensor(0.4574, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.8778, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.3148, device='cuda:0')
+0it [00:00, ?it/s]1it [00:04,  4.54s/it]1it [00:04,  4.54s/it]
+output tensor(0.5938, device='cuda:0', dtype=torch.float16, grad_fn=<SelectBackward0>)
+Epoch 8/40, Train Epoch Loss is 0.0657133013010025, end of epoch LR is 0.35
+Train F1 score (Non Deformation):  tensor(0.5882, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.7482, device='cuda:0')
+0it [00:00, ?it/s]1it [00:05,  5.10s/it]2it [00:06,  3.00s/it]3it [00:08,  2.33s/it]4it [00:09,  2.01s/it]5it [00:11,  1.84s/it]6it [00:12,  1.74s/it]7it [00:14,  1.67s/it]8it [00:15,  1.63s/it]9it [00:17,  1.60s/it]10it [00:18,  1.58s/it]11it [00:20,  1.56s/it]12it [00:21,  1.55s/it]13it [00:23,  1.55s/it]14it [00:25,  1.54s/it]15it [00:26,  1.54s/it]16it [00:28,  1.54s/it]17it [00:28,  1.26s/it]18it [00:29,  1.06s/it]19it [00:29,  1.08it/s]20it [00:30,  1.20it/s]21it [00:31,  1.31it/s]22it [00:31,  1.39it/s]23it [00:32,  1.46it/s]24it [00:32,  1.51it/s]24it [00:33,  1.38s/it]
+Val Epoch Loss is 0.0476902270068725
+Val Acc (Non Deformation):  tensor(0.6275, device='cuda:0')
+Val Acc (Deformation):  tensor(0.8565, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.7633, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.3387, device='cuda:0')
+0it [00:00, ?it/s]1it [00:04,  4.74s/it]1it [00:04,  4.74s/it]
+output tensor(0.6372, device='cuda:0', dtype=torch.float16, grad_fn=<SelectBackward0>)
+Epoch 9/40, Train Epoch Loss is 0.06057474762201309, end of epoch LR is 0.39375
+Train F1 score (Non Deformation):  tensor(0.5405, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.7733, device='cuda:0')
+0it [00:00, ?it/s]1it [00:05,  5.86s/it]2it [00:07,  3.31s/it]3it [00:08,  2.50s/it]4it [00:10,  2.12s/it]5it [00:11,  1.91s/it]6it [00:13,  1.78s/it]7it [00:15,  1.70s/it]8it [00:16,  1.65s/it]9it [00:18,  1.61s/it]10it [00:19,  1.59s/it]11it [00:21,  1.57s/it]12it [00:22,  1.56s/it]13it [00:24,  1.55s/it]14it [00:25,  1.54s/it]15it [00:27,  1.54s/it]16it [00:28,  1.54s/it]17it [00:29,  1.26s/it]18it [00:30,  1.06s/it]19it [00:30,  1.08it/s]20it [00:31,  1.20it/s]21it [00:31,  1.30it/s]22it [00:32,  1.39it/s]23it [00:33,  1.46it/s]24it [00:33,  1.51it/s]24it [00:33,  1.41s/it]
+Val Epoch Loss is 0.051549062598496675
+Val Acc (Non Deformation):  tensor(0.4392, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9372, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.6073, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.2774, device='cuda:0')
+0it [00:00, ?it/s]1it [01:51, 111.54s/it]2it [01:53, 46.83s/it] 3it [01:54, 26.15s/it]4it [01:56, 16.43s/it]5it [01:57, 11.06s/it]6it [01:59,  7.82s/it]7it [02:00,  5.76s/it]8it [02:02,  4.42s/it]9it [02:40, 15.13s/it]10it [02:42, 10.93s/it]11it [02:44,  8.05s/it]12it [02:45,  6.07s/it]13it [02:52,  6.23s/it]14it [02:52,  4.48s/it]15it [02:53,  3.27s/it]16it [02:53,  2.42s/it]16it [02:53, 10.85s/it]
+Test Acc (Non-Def) is: 0.4400595724582672
+Test Acc (Def) is: 0.9765625
+Test F1 Score (Non-Def) is: 0.6102219820022583
+Test F1 Score (Def) is: 0.24875621497631073
+0it [00:00, ?it/s]1it [00:05,  5.28s/it]1it [00:05,  5.28s/it]
+output tensor(0.6514, device='cuda:0', dtype=torch.float16, grad_fn=<SelectBackward0>)
+Epoch 10/40, Train Epoch Loss is 0.05515493080019951, end of epoch LR is 0.4375
+Train F1 score (Non Deformation):  tensor(0.5833, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8026, device='cuda:0')
+0it [00:00, ?it/s]1it [00:05,  5.83s/it]2it [00:07,  3.30s/it]3it [00:08,  2.50s/it]4it [00:10,  2.11s/it]5it [00:11,  1.90s/it]6it [00:13,  1.78s/it]7it [00:15,  1.70s/it]8it [00:16,  1.64s/it]9it [00:18,  1.61s/it]10it [00:19,  1.59s/it]11it [00:21,  1.57s/it]12it [00:22,  1.56s/it]13it [00:24,  1.55s/it]14it [00:25,  1.54s/it]15it [00:27,  1.54s/it]16it [00:28,  1.54s/it]17it [00:29,  1.26s/it]18it [00:30,  1.06s/it]19it [00:30,  1.08it/s]20it [00:31,  1.20it/s]21it [00:31,  1.31it/s]22it [00:32,  1.39it/s]23it [00:33,  1.46it/s]24it [00:33,  1.51it/s]24it [00:33,  1.41s/it]
+Val Epoch Loss is 0.05634985165670514
+Val Acc (Non Deformation):  tensor(0.2906, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9462, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.4481, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.2352, device='cuda:0')
+0it [00:00, ?it/s]1it [00:07,  7.57s/it]1it [00:07,  7.58s/it]
+output tensor(0.6172, device='cuda:0', dtype=torch.float16, grad_fn=<SelectBackward0>)
+Epoch 11/40, Train Epoch Loss is 0.05466173216700554, end of epoch LR is 0.4363016646118098
+Train F1 score (Non Deformation):  tensor(0.4938, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.7133, device='cuda:0')
+0it [00:00, ?it/s]slurmstepd: error: *** JOB 302968 ON gn40 CANCELLED AT 2025-07-14T12:18:51 ***

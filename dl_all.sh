@@ -22,7 +22,7 @@ urls=(
 	#'https://www.dropbox.com/scl/fo/o3dlvfs5d0uqh7fm3clqe/AG54q8pJsW-51aR_0TsSXWI/109D_05390_141615.zarr.tar?rlkey=ery6e44t5u0osgryyt1qq9z4b&dl=1'
 	#'https://www.dropbox.com/scl/fo/o3dlvfs5d0uqh7fm3clqe/AMpXcHpVhEMDxtpqhxVdt70/115D_04601_131313.zarr.tar?rlkey=ery6e44t5u0osgryyt1qq9z4b&dl=1'
 	#'https://www.dropbox.com/scl/fo/o3dlvfs5d0uqh7fm3clqe/AGiOwsdWmf_F-6khJvCog14/115D_04999_131313.zarr.tar?rlkey=ery6e44t5u0osgryyt1qq9z4b&dl=1'
-	#'https://www.dropbox.com/scl/fo/o3dlvfs5d0uqh7fm3clqe/AHQomOcRad7uh1BMsoKdhAk/124D_04854_171313.zarr.tar?rlkey=ery6e44t5u0osgryyt1qq9z4b&dl=1'
+	'https://www.dropbox.com/scl/fo/o3dlvfs5d0uqh7fm3clqe/AHQomOcRad7uh1BMsoKdhAk/124D_04854_171313.zarr.tar?rlkey=ery6e44t5u0osgryyt1qq9z4b&dl=1'
 	#'https://www.dropbox.com/scl/fo/o3dlvfs5d0uqh7fm3clqe/AAHX5xqCgwV6d-rzmF57yls/124D_05291_081406.zarr.tar?rlkey=ery6e44t5u0osgryyt1qq9z4b&dl=1'
 	#'https://www.dropbox.com/scl/fo/o3dlvfs5d0uqh7fm3clqe/ALjNguzoI0vcgpdFao90yno/128D_09016_110500.zarr.tar?rlkey=ery6e44t5u0osgryyt1qq9z4b&dl=1'
 	#'https://www.dropbox.com/scl/fo/o3dlvfs5d0uqh7fm3clqe/AA0P3LdxN-3Qqytlov6NSUc/142A_07606_131313.zarr.tar?rlkey=ery6e44t5u0osgryyt1qq9z4b&dl=1'
@@ -32,12 +32,12 @@ urls=(
 	#'https://www.dropbox.com/scl/fo/o3dlvfs5d0uqh7fm3clqe/ALpG8KNAPDuOR8r4Ny_Xha0/152D_08915_131313.zarr.tar?rlkey=ery6e44t5u0osgryyt1qq9z4b&dl=1'
 	#'https://www.dropbox.com/scl/fo/o3dlvfs5d0uqh7fm3clqe/AF-8yTQ8QvweL3nwijI5EmI/152D_09114_131313.zarr.tar?rlkey=ery6e44t5u0osgryyt1qq9z4b&dl=1'
 	#'https://www.dropbox.com/scl/fo/o3dlvfs5d0uqh7fm3clqe/AEz3o5Pdp6238zsLS373Vl4/155D_02484_191814.zarr.tar?rlkey=ery6e44t5u0osgryyt1qq9z4b&dl=1'
-	#'https://www.dropbox.com/scl/fo/o3dlvfs5d0uqh7fm3clqe/AJRaclJuTTxwwRbYxTia35E/155D_02579_100800.zarr.tar?rlkey=ery6e44t5u0osgryyt1qq9z4b&dl=1'
+	'https://www.dropbox.com/scl/fo/o3dlvfs5d0uqh7fm3clqe/AJRaclJuTTxwwRbYxTia35E/155D_02579_100800.zarr.tar?rlkey=ery6e44t5u0osgryyt1qq9z4b&dl=1'
 	#'https://www.dropbox.com/scl/fo/o3dlvfs5d0uqh7fm3clqe/AHsXU6OJzc1xVnamCTb72Cs/156A_05796_080500.zarr.tar?rlkey=ery6e44t5u0osgryyt1qq9z4b&dl=1'
 	#'https://www.dropbox.com/scl/fo/o3dlvfs5d0uqh7fm3clqe/AJmFEgBfgLpNfBb0wY3-lG0/162A_06192_060402.zarr.tar?rlkey=ery6e44t5u0osgryyt1qq9z4b&dl=1'
 	#'https://www.dropbox.com/scl/fo/o3dlvfs5d0uqh7fm3clqe/ACUMu8DqYFjQH2HQXfxJsJE/164A_13146_131313.zarr.tar?rlkey=ery6e44t5u0osgryyt1qq9z4b&dl=1'
 	#'https://www.dropbox.com/scl/fo/o3dlvfs5d0uqh7fm3clqe/AGEalt2CZKPER5kTJb4nNXE/169D_00001_020800.zarr.tar?rlkey=ery6e44t5u0osgryyt1qq9z4b&dl=1'
-	#'https://www.dropbox.com/scl/fo/o3dlvfs5d0uqh7fm3clqe/APbraRxYIhBe8xdM5sK7ly8/174A_09133_131313.zarr.tar?rlkey=ery6e44t5u0osgryyt1qq9z4b&dl=1'
+	'https://www.dropbox.com/scl/fo/o3dlvfs5d0uqh7fm3clqe/APbraRxYIhBe8xdM5sK7ly8/174A_09133_131313.zarr.tar?rlkey=ery6e44t5u0osgryyt1qq9z4b&dl=1'
 	#'https://www.dropbox.com/scl/fo/o3dlvfs5d0uqh7fm3clqe/AFz9bvI-bIq0gqjt6zX6k34/175D_12845_111312.zarr.tar?rlkey=ery6e44t5u0osgryyt1qq9z4b&dl=1'
 	'https://www.dropbox.com/scl/fo/o3dlvfs5d0uqh7fm3clqe/ACtTlBt9xgebYmTWCFowe6E/annotations.json?rlkey=ery6e44t5u0osgryyt1qq9z4b&dl=1'
 	'https://www.dropbox.com/scl/fo/o3dlvfs5d0uqh7fm3clqe/AILqCCRST_VXZK8aDoh5Zq8/metadata.json?rlkey=ery6e44t5u0osgryyt1qq9z4b&dl=1'
@@ -57,7 +57,7 @@ for url in "${urls[@]}"; do
 
 	IFS='?' read -r -a array <<< $(basename "$url")
 
-	curl -o "{$DATASET_DIR}${array[0]}" -L "$url"
+	curl -o "{$DATASET_DIR}${array[0]}" -L -C - "$url"
 
 	if [ $? -eq 0 ]; then
 		echo "Successfully downloaded: $(basename "$url")"

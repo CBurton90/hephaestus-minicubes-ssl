@@ -1,0 +1,60 @@
+20140101
+[0, 1, 2]
+[3, 4, 5, 6, 7, 8]
+/scratch/SDF25/Imagery/Hephaestus_Minicubes_v0_webdataset/1
+/scratch/SDF25/Imagery/Hephaestus_Minicubes_v0_webdataset/1/train_pos/sample-train_pos-000014.tar
+000014
+/scratch/SDF25/Imagery/Hephaestus_Minicubes_v0_webdataset/1/train_pos/sample-train_pos-{000000..000014}.tar
+Cuda available = True
+Random seed set as 42
+Finetuning stage is not set
+submitit ERROR (2025-07-16 10:44:23,607) - Submitted job triggered an exception
+submitit ERROR (2025-07-16 10:44:23,607) - Submitted job triggered an exception
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/conradb/.conda/envs/torch2/lib/python3.11/site-packages/submitit/core/_submit.py", line 11, in <module>
+    submitit_main()
+  File "/home/conradb/.conda/envs/torch2/lib/python3.11/site-packages/submitit/core/submission.py", line 76, in submitit_main
+    process_job(args.folder)
+  File "/home/conradb/.conda/envs/torch2/lib/python3.11/site-packages/submitit/core/submission.py", line 69, in process_job
+    raise error
+  File "/home/conradb/.conda/envs/torch2/lib/python3.11/site-packages/submitit/core/submission.py", line 55, in process_job
+    result = delayed.result()
+             ^^^^^^^^^^^^^^^^
+  File "/home/conradb/.conda/envs/torch2/lib/python3.11/site-packages/submitit/core/utils.py", line 137, in result
+    self._result = self.function(*self.args, **self.kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/submitit_finetune.py", line 16, in my_job
+    mae_finetune.finetune('../configs/e2e-finetune_config.toml', True)
+  File "/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/mae_finetune.py", line 103, in finetune
+    model = create_model(configs)
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/mae_finetune.py", line 56, in create_model
+    return model
+           ^^^^^
+UnboundLocalError: cannot access local variable 'model' where it is not associated with a value
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/conradb/.conda/envs/torch2/lib/python3.11/site-packages/submitit/core/_submit.py", line 11, in <module>
+    submitit_main()
+  File "/home/conradb/.conda/envs/torch2/lib/python3.11/site-packages/submitit/core/submission.py", line 76, in submitit_main
+    process_job(args.folder)
+  File "/home/conradb/.conda/envs/torch2/lib/python3.11/site-packages/submitit/core/submission.py", line 69, in process_job
+    raise error
+  File "/home/conradb/.conda/envs/torch2/lib/python3.11/site-packages/submitit/core/submission.py", line 55, in process_job
+    result = delayed.result()
+             ^^^^^^^^^^^^^^^^
+  File "/home/conradb/.conda/envs/torch2/lib/python3.11/site-packages/submitit/core/utils.py", line 137, in result
+    self._result = self.function(*self.args, **self.kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/submitit_finetune.py", line 16, in my_job
+    mae_finetune.finetune('../configs/e2e-finetune_config.toml', True)
+  File "/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/mae_finetune.py", line 103, in finetune
+    model = create_model(configs)
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/mae_finetune.py", line 56, in create_model
+    return model
+           ^^^^^
+UnboundLocalError: cannot access local variable 'model' where it is not associated with a value

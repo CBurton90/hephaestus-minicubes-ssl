@@ -1,0 +1,17 @@
+/home/conradb/.conda/envs/torch2/lib/python3.11/site-packages/submitit/core/plugins.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+wandb: Currently logged in as: conradp-burton (conradp-burton-gns-science) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: Tracking run with wandb version 0.20.1
+wandb: Run data is saved locally in /share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/wandb/run-20250717_090329-zzauk4bf
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run cosmic-resonance-3
+wandb: ⭐️ View project at https://wandb.ai/conradp-burton-gns-science/Hephaestus-minicubes-MAE-e2e-finetune
+wandb: 🚀 View run at https://wandb.ai/conradp-burton-gns-science/Hephaestus-minicubes-MAE-e2e-finetune/runs/zzauk4bf
+/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/mae/utils.py:11: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self._scaler = torch.cuda.amp.GradScaler()
+0it [00:00, ?it/s]/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/mae/engine_finetune.py:73: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+/home/conradb/.conda/envs/torch2/lib/python3.11/site-packages/wandb/sdk/data_types/image.py:93: RuntimeWarning: invalid value encountered in cast
+  return data.clip(0, 255).astype(np.uint8)
+1it [00:07,  7.75s/it]2it [00:09,  4.34s/it]3it [00:11,  3.34s/it]4it [00:13,  2.83s/it]5it [00:16,  2.59s/it]6it [00:18,  2.41s/it]7it [00:20,  2.24s/it]8it [00:21,  2.15s/it]9it [00:23,  2.06s/it]10it [00:25,  2.04s/it]11it [00:27,  2.05s/it]12it [00:29,  1.98s/it]13it [00:31,  2.00s/it]14it [00:33,  2.05s/it]15it [00:35,  2.02s/it]16it [00:37,  2.01s/it]17it [00:39,  2.02s/it]18it [00:41,  2.01s/it]19it [00:43,  2.00s/it]20it [00:45,  2.00s/it]21it [00:48,  2.07s/it]22it [00:50,  2.11s/it]23it [00:52,  2.09s/it]24it [00:54,  2.09s/it]25it [00:56,  2.12s/it]26it [00:58,  2.12s/it]27it [01:00,  2.11s/it]28it [01:02,  2.11s/it]29it [01:04,  2.08s/it]30it [01:07,  2.11s/it]31it [01:09,  2.13s/it]32it [01:11,  2.10s/it]33it [01:13,  2.08s/it]34it [01:15,  2.08s/it]35it [01:17,  2.08s/it]36it [01:19,  2.12s/it]37it [01:21,  2.07s/it]38it [01:23,  2.03s/it]39it [01:25,  2.01s/it]40it [01:27,  2.02s/it]41it [01:29,  2.07s/it]42it [01:31,  2.10s/it]43it [01:34,  2.07s/it]44it [01:35,  2.04s/it]45it [01:37,  2.03s/it]46it [01:40,  2.05s/it]47it [01:42,  2.09s/it]48it [01:44,  2.10s/it]49it [01:46,  2.10s/it]50it [01:48,  2.07s/it]

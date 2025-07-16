@@ -1,0 +1,18 @@
+{"time":"2025-07-15T13:48:10.702287484+12:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/wandb/run-20250715_134810-q0esijil/logs/debug-core.log"}
+{"time":"2025-07-15T13:48:11.132997598+12:00","level":"INFO","msg":"stream: created new stream","id":"q0esijil"}
+{"time":"2025-07-15T13:48:11.133016152+12:00","level":"INFO","msg":"stream: started","id":"q0esijil"}
+{"time":"2025-07-15T13:48:11.133025074+12:00","level":"INFO","msg":"writer: Do: started","stream_id":"q0esijil"}
+{"time":"2025-07-15T13:48:11.133138258+12:00","level":"INFO","msg":"handler: started","stream_id":"q0esijil"}
+{"time":"2025-07-15T13:48:11.133162971+12:00","level":"INFO","msg":"sender: started","stream_id":"q0esijil"}
+{"time":"2025-07-15T13:48:11.443890838+12:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-15T15:18:26.800028652+12:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-07-15T16:37:44.606388007+12:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-15T16:37:44.606469655+12:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-15T16:37:45.607863784+12:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact vit_large_patch16_epochs_90_blr_2_crossentropyloss_linprobe","runtime_seconds":1.003189588},{"desc":"uploading output.log","runtime_seconds":0.703313195,"progress":"99.9KB/99.9KB"}],"total_operations":2}}
+{"time":"2025-07-15T16:38:45.640902023+12:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact vit_large_patch16_epochs_90_blr_2_crossentropyloss_linprobe","runtime_seconds":61.036226861,"subtasks":[{"desc":"vit_large_patch16_epochs_90_blr_2_crossentropyloss_linprobe.pt","runtime_seconds":59.996084219,"progress":"1.05GB/1.13GB"}]}],"total_operations":1}}
+{"time":"2025-07-15T16:38:51.866405113+12:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-15T16:38:52.221269998+12:00","level":"INFO","msg":"stream: closing","id":"q0esijil"}
+{"time":"2025-07-15T16:38:52.221278185+12:00","level":"INFO","msg":"handler: closed","stream_id":"q0esijil"}
+{"time":"2025-07-15T16:38:52.22128319+12:00","level":"INFO","msg":"writer: Close: closed","stream_id":"q0esijil"}
+{"time":"2025-07-15T16:38:52.221285727+12:00","level":"INFO","msg":"sender: closed","stream_id":"q0esijil"}
+{"time":"2025-07-15T16:38:52.221450199+12:00","level":"INFO","msg":"stream: closed","id":"q0esijil"}

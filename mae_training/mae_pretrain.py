@@ -7,6 +7,7 @@ import os
 import random
 import sys
 import toml
+import time
 
 # PyTorch/ML imports
 import torch
@@ -112,6 +113,7 @@ def pretrain(configs, verbose):
     print(f"Starting MAE petraining for {configs.train.epochs} epochs")
     print('='*20)
 
+    start = time.time()
     for epoch in range(0, configs.train.epochs):
         train_stats, lr, image_logs = train_one_epoch(
             model, train_loader,
@@ -147,6 +149,12 @@ def pretrain(configs, verbose):
                     wandb.log_artifact(artifact)
 
     wandb.finish(exit_code=0)
+    end = time.time()
+    elapsed = end - start
+    print('='*20)
+    print(f"MAE petraining complete in {elapsed} seconds for {configs.train.epochs} epochs")
+    print('='*20)
+
 
 if __name__ == '__main__':
     pretrain('../configs/pretrain_config.toml', True)

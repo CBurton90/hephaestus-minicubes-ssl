@@ -4,11 +4,11 @@ seed = 42
 
 # webdataset config
 webdataset = true
-webdataset_root = '/scratch/SDF25/Hephaestus_Minicubes_v0_webdataset/'
-webdataset_write_processes = 4
+webdataset_root = '/scratch/SDF25/Imagery/Hephaestus_Minicubes_v0_webdataset/'
+webdataset_write_processes = 8
 webdataset_initial_buffer = 300
 webdataset_shuffle_size = 100
-num_workers = 4
+num_workers = 8
 max_samples_per_shard = 128
 prefetch_factor = 2
 persistent_workers = false
@@ -18,34 +18,35 @@ geomorphology_channels = ["insar_difference", "insar_coherence", "dem"]
 atmospheric_channels =  ["total_column_water_vapour", "surface_pressure", "vertical_integral_of_temperature"]
 timeseries = false
 timeseries_length = 1
-timeseries_data = '../dataset/quality_timeseries_test.json'
+timeseries_data = '../dataset/quality_timeseries.json'
 train_years = ["20140101", "20190531"] # matching hephaestsus publication, data included in pretraining
 val_years = ["20190601", "20191231"] # matching hephaestsus publication, data included in pretraining
 test_years = ["20200101", "20211231"] # matching hephaestsus publication, data not included in pretraining
-annotation_path = '../dataset/annotations_test.json'
+
+annotation_path = '../dataset/annotations.json'
 
 # data specific
 augment = true
 image_size = 512
-zarr_path = '/scratch/SDF25/Hephaestus_Minicubes_v0/'
+zarr_path = '/scratch/SDF25/Imagery/Hephaestus_Minicubes_v0/'
 mask_target = "union"
 task = 'classification'
-batch_size = 32
+batch_size = 112
 num_classes = 2
 
 
 [augmentations]
 [augmentations.GaussianBlur]
 value = [0.1, 2.0]
-p = 0.3
+p = 0.0
 [augmentations.RandomResizedCrop]
-scale = [0.2, 1.0]
+scale = [0.8, 1.0]
 interpolation = 1
 p = 0.3
 [augmentations.HorizontalFlip]
-p = 0.3
+p = 0.5
 [augmentations.VerticalFlip]
-p = 0.3
+p = 0.5
 [augmentations.RandomRotation]
 p = 0.6
 [augmentations.ElasticTransform]
@@ -65,21 +66,22 @@ stage = 'linprobe' # one of pretraining, linprobe, or finetuning
 
 # model architecture
 architecture = "ViT"
-model = "vit_base_patch16"
+model = "vit_large_patch16"
 
 # other
 global_pool = false
-checkpoint_load_path = 'checkpoints/mae/pretraining/mae_vit_base_patch16/0crtm1js/mae_vit_base_patch16_epochs_40.pt'
+checkpoint_load_path = 'checkpoints/mae/pretraining/mae_vit_large_patch16/vbe2p57j/mae_vit_large_patch16_epochs_800.pt'
 
 
 
 [train]
 # training specific
-device = 'cpu'
-blr = 1e-1
+device = 'cuda'
+criterion = 'crossentropyloss' # one of crossentropyloss or focalloss
+blr = 2
 min_lr = 0
 weight_decay = 0
-epochs = 40
+epochs = 90
 warmup_epochs = 10
 
 

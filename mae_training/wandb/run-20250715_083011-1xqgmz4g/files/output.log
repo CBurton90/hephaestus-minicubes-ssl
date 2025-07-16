@@ -1,0 +1,1208 @@
+20140101
+[0, 1, 2]
+[3, 4, 5, 6, 7, 8]
+/scratch/SDF25/Imagery/Hephaestus_Minicubes_v0_webdataset/1
+/scratch/SDF25/Imagery/Hephaestus_Minicubes_v0_webdataset/1/train_pos/sample-train_pos-000014.tar
+000014
+/scratch/SDF25/Imagery/Hephaestus_Minicubes_v0_webdataset/1/train_pos/sample-train_pos-{000000..000014}.tar
+Cuda available = True
+Random seed set as 42
+Load pre-trained checkpoint from: checkpoints/mae/pretraining/mae_vit_large_patch16/vbe2p57j/mae_vit_large_patch16_epochs_800.pt
+_IncompatibleKeys(missing_keys=['head.weight', 'head.bias'], unexpected_keys=['mask_token', 'decoder_pos_embed', 'decoder_embed.weight', 'decoder_embed.bias', 'decoder_blocks.0.norm1.weight', 'decoder_blocks.0.norm1.bias', 'decoder_blocks.0.attn.qkv.weight', 'decoder_blocks.0.attn.qkv.bias', 'decoder_blocks.0.attn.proj.weight', 'decoder_blocks.0.attn.proj.bias', 'decoder_blocks.0.norm2.weight', 'decoder_blocks.0.norm2.bias', 'decoder_blocks.0.mlp.fc1.weight', 'decoder_blocks.0.mlp.fc1.bias', 'decoder_blocks.0.mlp.fc2.weight', 'decoder_blocks.0.mlp.fc2.bias', 'decoder_blocks.1.norm1.weight', 'decoder_blocks.1.norm1.bias', 'decoder_blocks.1.attn.qkv.weight', 'decoder_blocks.1.attn.qkv.bias', 'decoder_blocks.1.attn.proj.weight', 'decoder_blocks.1.attn.proj.bias', 'decoder_blocks.1.norm2.weight', 'decoder_blocks.1.norm2.bias', 'decoder_blocks.1.mlp.fc1.weight', 'decoder_blocks.1.mlp.fc1.bias', 'decoder_blocks.1.mlp.fc2.weight', 'decoder_blocks.1.mlp.fc2.bias', 'decoder_blocks.2.norm1.weight', 'decoder_blocks.2.norm1.bias', 'decoder_blocks.2.attn.qkv.weight', 'decoder_blocks.2.attn.qkv.bias', 'decoder_blocks.2.attn.proj.weight', 'decoder_blocks.2.attn.proj.bias', 'decoder_blocks.2.norm2.weight', 'decoder_blocks.2.norm2.bias', 'decoder_blocks.2.mlp.fc1.weight', 'decoder_blocks.2.mlp.fc1.bias', 'decoder_blocks.2.mlp.fc2.weight', 'decoder_blocks.2.mlp.fc2.bias', 'decoder_blocks.3.norm1.weight', 'decoder_blocks.3.norm1.bias', 'decoder_blocks.3.attn.qkv.weight', 'decoder_blocks.3.attn.qkv.bias', 'decoder_blocks.3.attn.proj.weight', 'decoder_blocks.3.attn.proj.bias', 'decoder_blocks.3.norm2.weight', 'decoder_blocks.3.norm2.bias', 'decoder_blocks.3.mlp.fc1.weight', 'decoder_blocks.3.mlp.fc1.bias', 'decoder_blocks.3.mlp.fc2.weight', 'decoder_blocks.3.mlp.fc2.bias', 'decoder_blocks.4.norm1.weight', 'decoder_blocks.4.norm1.bias', 'decoder_blocks.4.attn.qkv.weight', 'decoder_blocks.4.attn.qkv.bias', 'decoder_blocks.4.attn.proj.weight', 'decoder_blocks.4.attn.proj.bias', 'decoder_blocks.4.norm2.weight', 'decoder_blocks.4.norm2.bias', 'decoder_blocks.4.mlp.fc1.weight', 'decoder_blocks.4.mlp.fc1.bias', 'decoder_blocks.4.mlp.fc2.weight', 'decoder_blocks.4.mlp.fc2.bias', 'decoder_blocks.5.norm1.weight', 'decoder_blocks.5.norm1.bias', 'decoder_blocks.5.attn.qkv.weight', 'decoder_blocks.5.attn.qkv.bias', 'decoder_blocks.5.attn.proj.weight', 'decoder_blocks.5.attn.proj.bias', 'decoder_blocks.5.norm2.weight', 'decoder_blocks.5.norm2.bias', 'decoder_blocks.5.mlp.fc1.weight', 'decoder_blocks.5.mlp.fc1.bias', 'decoder_blocks.5.mlp.fc2.weight', 'decoder_blocks.5.mlp.fc2.bias', 'decoder_blocks.6.norm1.weight', 'decoder_blocks.6.norm1.bias', 'decoder_blocks.6.attn.qkv.weight', 'decoder_blocks.6.attn.qkv.bias', 'decoder_blocks.6.attn.proj.weight', 'decoder_blocks.6.attn.proj.bias', 'decoder_blocks.6.norm2.weight', 'decoder_blocks.6.norm2.bias', 'decoder_blocks.6.mlp.fc1.weight', 'decoder_blocks.6.mlp.fc1.bias', 'decoder_blocks.6.mlp.fc2.weight', 'decoder_blocks.6.mlp.fc2.bias', 'decoder_blocks.7.norm1.weight', 'decoder_blocks.7.norm1.bias', 'decoder_blocks.7.attn.qkv.weight', 'decoder_blocks.7.attn.qkv.bias', 'decoder_blocks.7.attn.proj.weight', 'decoder_blocks.7.attn.proj.bias', 'decoder_blocks.7.norm2.weight', 'decoder_blocks.7.norm2.bias', 'decoder_blocks.7.mlp.fc1.weight', 'decoder_blocks.7.mlp.fc1.bias', 'decoder_blocks.7.mlp.fc2.weight', 'decoder_blocks.7.mlp.fc2.bias', 'decoder_norm.weight', 'decoder_norm.bias', 'decoder_pred.weight', 'decoder_pred.bias'])
+Model = VisionTransformer(
+  (patch_embed): PatchEmbed(
+    (proj): Conv2d(3, 1024, kernel_size=(16, 16), stride=(16, 16))
+    (norm): Identity()
+  )
+  (pos_drop): Dropout(p=0.0, inplace=False)
+  (patch_drop): Identity()
+  (norm_pre): Identity()
+  (blocks): Sequential(
+    (0): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (1): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (2): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (3): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (4): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (5): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (6): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (7): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (8): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (9): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (10): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (11): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (12): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (13): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (14): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (15): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (16): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (17): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (18): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (19): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (20): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (21): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (22): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (23): Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (q_norm): Identity()
+        (k_norm): Identity()
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+  )
+  (norm): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+  (fc_norm): Identity()
+  (head_drop): Dropout(p=0.0, inplace=False)
+  (head): Sequential(
+    (0): BatchNorm1d(1024, eps=1e-06, momentum=0.1, affine=False, track_running_stats=True)
+    (1): Linear(in_features=1024, out_features=2, bias=True)
+  )
+)
+number of params (M): 2050.00
+base lr: 1.00e+00
+actual lr: 4.38e-01
+LARS (
+Parameter Group 0
+    lr: 0.4375
+    momentum: 0.9
+    trust_coefficient: 0.001
+    weight_decay: 0
+)
+/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/mae/utils.py:11: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self._scaler = torch.cuda.amp.GradScaler()
+Starting MAE linear probing training for 50 epochs
+0it [00:00, ?it/s]/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/mae/engine_finetune.py:73: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+/home/conradb/.conda/envs/torch2/lib/python3.11/site-packages/wandb/sdk/data_types/image.py:93: RuntimeWarning: invalid value encountered in cast
+  return data.clip(0, 255).astype(np.uint8)
+20it [01:06,  3.33s/it]
+Epoch 0/50, Train Epoch Loss is 0.652903750538826, end of epoch LR is 0.0
+Train F1 score (Non Deformation):  tensor(0.5727, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.6637, device='cuda:0')
+{'Epoch': 0, 'train_loss': 0.652903750538826, 'end_of_epoch_lr': 0.0, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.5727, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.6637, device='cuda:0')}
+0it [00:00, ?it/s]/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/mae/engine_finetune.py:175: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+/home/conradb/.conda/envs/torch2/lib/python3.11/site-packages/torcheval/metrics/functional/classification/accuracy.py:275: UserWarning: The reduce argument of torch.scatter with Tensor src is deprecated and will be removed in a future PyTorch release. Use torch.scatter_reduce instead for more reduction options. (Triggered internally at /pytorch/aten/src/ATen/native/TensorAdvancedIndexing.cpp:232.)
+  num_correct = mask.new_zeros(num_classes).scatter_(0, target, mask, reduce="add")
+/home/conradb/.conda/envs/torch2/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+24it [00:40,  1.70s/it]
+Val Epoch Loss is 0.6380113363265991
+Val Acc (Non Deformation):  tensor(0.6937, device='cuda:0')
+Val Acc (Deformation):  tensor(0.3377, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.7992, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.1099, device='cuda:0')
+20it [01:06,  3.32s/it]
+Epoch 1/50, Train Epoch Loss is 0.6486880749464035, end of epoch LR is 0.04375
+Train F1 score (Non Deformation):  tensor(0.5654, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.6716, device='cuda:0')
+{'Epoch': 1, 'train_loss': 0.6486880749464035, 'end_of_epoch_lr': 0.04375, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.5654, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.6716, device='cuda:0')}
+24it [00:39,  1.65s/it]
+Val Epoch Loss is 0.6386858746409416
+Val Acc (Non Deformation):  tensor(0.5882, device='cuda:0')
+Val Acc (Deformation):  tensor(0.6234, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.7297, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.1542, device='cuda:0')
+20it [01:04,  3.24s/it]
+Epoch 2/50, Train Epoch Loss is 0.6256614685058594, end of epoch LR is 0.0875
+Train F1 score (Non Deformation):  tensor(0.6289, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.6728, device='cuda:0')
+{'Epoch': 2, 'train_loss': 0.6256614685058594, 'end_of_epoch_lr': 0.0875, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.6289, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.6728, device='cuda:0')}
+24it [00:39,  1.63s/it]
+Val Epoch Loss is 0.6697151636083921
+Val Acc (Non Deformation):  tensor(0.5364, device='cuda:0')
+Val Acc (Deformation):  tensor(0.8312, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.6934, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.1826, device='cuda:0')
+21it [01:08,  3.26s/it]
+Epoch 3/50, Train Epoch Loss is 0.5951707277979169, end of epoch LR is 0.13125
+Train F1 score (Non Deformation):  tensor(0.7199, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.6594, device='cuda:0')
+{'Epoch': 3, 'train_loss': 0.5951707277979169, 'end_of_epoch_lr': 0.13125, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.7199, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.6594, device='cuda:0')}
+24it [00:40,  1.70s/it]
+Val Epoch Loss is 0.6659507478276888
+Val Acc (Non Deformation):  tensor(0.5795, device='cuda:0')
+Val Acc (Deformation):  tensor(0.8442, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.7292, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.2000, device='cuda:0')
+20it [01:03,  3.19s/it]
+Epoch 4/50, Train Epoch Loss is 0.5584869086742401, end of epoch LR is 0.175
+Train F1 score (Non Deformation):  tensor(0.7463, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.6955, device='cuda:0')
+{'Epoch': 4, 'train_loss': 0.5584869086742401, 'end_of_epoch_lr': 0.175, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.7463, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.6955, device='cuda:0')}
+24it [00:40,  1.69s/it]
+Val Epoch Loss is 0.5768922418355942
+Val Acc (Non Deformation):  tensor(0.6821, device='cuda:0')
+Val Acc (Deformation):  tensor(0.8247, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.8057, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.2421, device='cuda:0')
+21it [01:07,  3.23s/it]
+Epoch 5/50, Train Epoch Loss is 0.5175513937359765, end of epoch LR is 0.21875
+Train F1 score (Non Deformation):  tensor(0.7840, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.7104, device='cuda:0')
+{'Epoch': 5, 'train_loss': 0.5175513937359765, 'end_of_epoch_lr': 0.21875, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.7840, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.7104, device='cuda:0')}
+24it [00:38,  1.61s/it]
+Val Epoch Loss is 0.5733407214283943
+Val Acc (Non Deformation):  tensor(0.6829, device='cuda:0')
+Val Acc (Deformation):  tensor(0.8961, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.8084, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.2609, device='cuda:0')
+20it [01:04,  3.20s/it]
+Epoch 6/50, Train Epoch Loss is 0.480291473865509, end of epoch LR is 0.2625
+Train F1 score (Non Deformation):  tensor(0.7620, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.7256, device='cuda:0')
+{'Epoch': 6, 'train_loss': 0.480291473865509, 'end_of_epoch_lr': 0.2625, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.7620, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.7256, device='cuda:0')}
+24it [00:39,  1.63s/it]
+Val Epoch Loss is 0.4187819076081117
+Val Acc (Non Deformation):  tensor(0.8431, device='cuda:0')
+Val Acc (Deformation):  tensor(0.8442, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9100, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.3922, device='cuda:0')
+20it [01:02,  3.12s/it]
+Epoch 7/50, Train Epoch Loss is 0.45901466310024264, end of epoch LR is 0.30625
+Train F1 score (Non Deformation):  tensor(0.7849, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.7382, device='cuda:0')
+{'Epoch': 7, 'train_loss': 0.45901466310024264, 'end_of_epoch_lr': 0.30625, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.7849, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.7382, device='cuda:0')}
+24it [00:39,  1.63s/it]
+Val Epoch Loss is 0.396192433933417
+Val Acc (Non Deformation):  tensor(0.8609, device='cuda:0')
+Val Acc (Deformation):  tensor(0.8571, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9208, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.4244, device='cuda:0')
+20it [01:05,  3.29s/it]
+Epoch 8/50, Train Epoch Loss is 0.42033315300941465, end of epoch LR is 0.35
+Train F1 score (Non Deformation):  tensor(0.8066, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.7812, device='cuda:0')
+{'Epoch': 8, 'train_loss': 0.42033315300941465, 'end_of_epoch_lr': 0.35, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8066, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.7812, device='cuda:0')}
+24it [00:39,  1.63s/it]
+Val Epoch Loss is 0.31379008541504544
+Val Acc (Non Deformation):  tensor(0.9164, device='cuda:0')
+Val Acc (Deformation):  tensor(0.8571, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9518, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.5410, device='cuda:0')
+20it [01:04,  3.22s/it]
+Epoch 9/50, Train Epoch Loss is 0.39412623941898345, end of epoch LR is 0.39375
+Train F1 score (Non Deformation):  tensor(0.8027, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.7829, device='cuda:0')
+{'Epoch': 9, 'train_loss': 0.39412623941898345, 'end_of_epoch_lr': 0.39375, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8027, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.7829, device='cuda:0')}
+24it [00:39,  1.66s/it]
+Val Epoch Loss is 0.35061582798759144
+Val Acc (Non Deformation):  tensor(0.8932, device='cuda:0')
+Val Acc (Deformation):  tensor(0.8896, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9401, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.4991, device='cuda:0')
+64it [01:33,  1.46s/it]
+Test Acc (Non-Def) is: 0.8978638052940369
+Test Acc (Def) is: 0.5206286907196045
+Test F1 Score (Non-Def) is: 0.9263085126876831
+Test F1 Score (Def) is: 0.3823953866958618
+Saving checkpoint
+20it [01:04,  3.24s/it]
+Epoch 10/50, Train Epoch Loss is 0.385515159368515, end of epoch LR is 0.4375
+Train F1 score (Non Deformation):  tensor(0.8008, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.7793, device='cuda:0')
+{'Epoch': 10, 'train_loss': 0.385515159368515, 'end_of_epoch_lr': 0.4375, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8008, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.7793, device='cuda:0')}
+24it [00:38,  1.62s/it]
+Val Epoch Loss is 0.25615536235272884
+Val Acc (Non Deformation):  tensor(0.9561, device='cuda:0')
+Val Acc (Deformation):  tensor(0.8766, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9737, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6835, device='cuda:0')
+20it [01:07,  3.36s/it]
+Epoch 11/50, Train Epoch Loss is 0.37146745026111605, end of epoch LR is 0.43682566675412177
+Train F1 score (Non Deformation):  tensor(0.8232, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.7698, device='cuda:0')
+{'Epoch': 11, 'train_loss': 0.37146745026111605, 'end_of_epoch_lr': 0.43682566675412177, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8232, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.7698, device='cuda:0')}
+24it [00:40,  1.70s/it]
+Val Epoch Loss is 0.25256332010030746
+Val Acc (Non Deformation):  tensor(0.9536, device='cuda:0')
+Val Acc (Deformation):  tensor(0.8896, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9728, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6799, device='cuda:0')
+21it [01:07,  3.21s/it]
+Epoch 12/50, Train Epoch Loss is 0.3748894348030999, end of epoch LR is 0.4348068245051864
+Train F1 score (Non Deformation):  tensor(0.8054, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.7616, device='cuda:0')
+{'Epoch': 12, 'train_loss': 0.3748894348030999, 'end_of_epoch_lr': 0.4348068245051864, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8054, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.7616, device='cuda:0')}
+24it [00:39,  1.65s/it]
+Val Epoch Loss is 0.32728854690988857
+Val Acc (Non Deformation):  tensor(0.9189, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9286, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9555, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.5801, device='cuda:0')
+20it [01:04,  3.24s/it]
+Epoch 13/50, Train Epoch Loss is 0.35553443878889085, end of epoch LR is 0.43145592008699174
+Train F1 score (Non Deformation):  tensor(0.8249, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8073, device='cuda:0')
+{'Epoch': 13, 'train_loss': 0.35553443878889085, 'end_of_epoch_lr': 0.43145592008699174, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8249, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8073, device='cuda:0')}
+24it [00:40,  1.68s/it]
+Val Epoch Loss is 0.3223890612522761
+Val Acc (Non Deformation):  tensor(0.9238, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9351, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9584, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.5975, device='cuda:0')
+20it [01:05,  3.28s/it]
+Epoch 14/50, Train Epoch Loss is 0.3401581957936287, end of epoch LR is 0.42679361293956486
+Train F1 score (Non Deformation):  tensor(0.8397, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8063, device='cuda:0')
+{'Epoch': 14, 'train_loss': 0.3401581957936287, 'end_of_epoch_lr': 0.42679361293956486, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8397, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8063, device='cuda:0')}
+24it [00:41,  1.72s/it]
+Val Epoch Loss is 0.2402219008654356
+Val Acc (Non Deformation):  tensor(0.9536, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9156, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9736, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6929, device='cuda:0')
+20it [01:04,  3.24s/it]
+Epoch 15/50, Train Epoch Loss is 0.34892231673002244, end of epoch LR is 0.420848647736844
+Train F1 score (Non Deformation):  tensor(0.8056, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8069, device='cuda:0')
+{'Epoch': 15, 'train_loss': 0.34892231673002244, 'end_of_epoch_lr': 0.420848647736844, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8056, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8069, device='cuda:0')}
+24it [00:40,  1.69s/it]
+Val Epoch Loss is 0.2460718664030234
+Val Acc (Non Deformation):  tensor(0.9549, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9091, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9740, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6948, device='cuda:0')
+20it [01:04,  3.25s/it]
+Epoch 16/50, Train Epoch Loss is 0.34327114969491956, end of epoch LR is 0.41365767716620544
+Train F1 score (Non Deformation):  tensor(0.8124, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8090, device='cuda:0')
+{'Epoch': 16, 'train_loss': 0.34327114969491956, 'end_of_epoch_lr': 0.41365767716620544, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8124, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8090, device='cuda:0')}
+24it [00:39,  1.66s/it]
+Val Epoch Loss is 0.21109944706161818
+Val Acc (Non Deformation):  tensor(0.9599, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9091, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9766, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.7161, device='cuda:0')
+20it [01:05,  3.29s/it]
+Epoch 17/50, Train Epoch Loss is 0.34477225244045256, end of epoch LR is 0.40526503595245766
+Train F1 score (Non Deformation):  tensor(0.8199, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8045, device='cuda:0')
+{'Epoch': 17, 'train_loss': 0.34477225244045256, 'end_of_epoch_lr': 0.40526503595245766, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8199, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8045, device='cuda:0')}
+24it [00:39,  1.64s/it]
+Val Epoch Loss is 0.24234444461762905
+Val Acc (Non Deformation):  tensor(0.9520, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9286, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9731, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6925, device='cuda:0')
+20it [01:04,  3.25s/it]
+Epoch 18/50, Train Epoch Loss is 0.3304672449827194, end of epoch LR is 0.3957224675195198
+Train F1 score (Non Deformation):  tensor(0.8228, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8245, device='cuda:0')
+{'Epoch': 18, 'train_loss': 0.3304672449827194, 'end_of_epoch_lr': 0.3957224675195198, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8228, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8245, device='cuda:0')}
+24it [00:40,  1.69s/it]
+Val Epoch Loss is 0.2529797609895468
+Val Acc (Non Deformation):  tensor(0.9458, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9286, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9699, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6682, device='cuda:0')
+20it [01:04,  3.20s/it]
+Epoch 19/50, Train Epoch Loss is 0.3456462323665619, end of epoch LR is 0.3850888049750068
+Train F1 score (Non Deformation):  tensor(0.8149, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8119, device='cuda:0')
+{'Epoch': 19, 'train_loss': 0.3456462323665619, 'end_of_epoch_lr': 0.3850888049750068, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8149, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8119, device='cuda:0')}
+24it [00:39,  1.64s/it]
+Val Epoch Loss is 0.23543500155210495
+Val Acc (Non Deformation):  tensor(0.9491, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9221, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9714, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6778, device='cuda:0')
+64it [01:32,  1.45s/it]
+Test Acc (Non-Def) is: 0.9546061158180237
+Test Acc (Def) is: 0.5284872055053711
+Test F1 Score (Non-Def) is: 0.9571619629859924
+Test F1 Score (Def) is: 0.5123809576034546
+Saving checkpoint
+20it [01:03,  3.17s/it]
+Epoch 20/50, Train Epoch Loss is 0.33962460458278654, end of epoch LR is 0.37342960838455724
+Train F1 score (Non Deformation):  tensor(0.8135, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8168, device='cuda:0')
+{'Epoch': 20, 'train_loss': 0.33962460458278654, 'end_of_epoch_lr': 0.37342960838455724, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8135, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8168, device='cuda:0')}
+24it [00:39,  1.65s/it]
+Val Epoch Loss is 0.2721494175493717
+Val Acc (Non Deformation):  tensor(0.9367, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9351, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9652, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6386, device='cuda:0')
+19it [01:01,  3.22s/it]
+Epoch 21/50, Train Epoch Loss is 0.3165594151145534, end of epoch LR is 0.3608167605722277
+Train F1 score (Non Deformation):  tensor(0.8322, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8458, device='cuda:0')
+{'Epoch': 21, 'train_loss': 0.3165594151145534, 'end_of_epoch_lr': 0.3608167605722277, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8322, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8458, device='cuda:0')}
+24it [00:39,  1.66s/it]
+Val Epoch Loss is 0.22844759871562323
+Val Acc (Non Deformation):  tensor(0.9466, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9221, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9701, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6682, device='cuda:0')
+20it [01:03,  3.19s/it]
+Epoch 22/50, Train Epoch Loss is 0.33544927537441255, end of epoch LR is 0.3473280239389785
+Train F1 score (Non Deformation):  tensor(0.8158, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8053, device='cuda:0')
+{'Epoch': 22, 'train_loss': 0.33544927537441255, 'end_of_epoch_lr': 0.3473280239389785, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8158, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8053, device='cuda:0')}
+24it [00:39,  1.63s/it]
+Val Epoch Loss is 0.1992041248207291
+Val Acc (Non Deformation):  tensor(0.9549, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9221, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9744, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.7012, device='cuda:0')
+19it [01:01,  3.25s/it]
+Epoch 23/50, Train Epoch Loss is 0.32990539544507075, end of epoch LR is 0.3330465610316138
+Train F1 score (Non Deformation):  tensor(0.8122, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8220, device='cuda:0')
+{'Epoch': 23, 'train_loss': 0.32990539544507075, 'end_of_epoch_lr': 0.3330465610316138, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8122, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8220, device='cuda:0')}
+24it [00:40,  1.70s/it]
+Val Epoch Loss is 0.23075499199330807
+Val Acc (Non Deformation):  tensor(0.9470, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9221, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9703, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6698, device='cuda:0')
+19it [01:01,  3.23s/it]
+Epoch 24/50, Train Epoch Loss is 0.32427527402576645, end of epoch LR is 0.31806042181802585
+Train F1 score (Non Deformation):  tensor(0.8308, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8426, device='cuda:0')
+{'Epoch': 24, 'train_loss': 0.32427527402576645, 'end_of_epoch_lr': 0.31806042181802585, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8308, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8426, device='cuda:0')}
+24it [00:38,  1.62s/it]
+Val Epoch Loss is 0.2293479231496652
+Val Acc (Non Deformation):  tensor(0.9470, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9221, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9703, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6698, device='cuda:0')
+20it [01:04,  3.24s/it]
+Epoch 25/50, Train Epoch Loss is 0.32579191997647283, end of epoch LR is 0.3024620008298634
+Train F1 score (Non Deformation):  tensor(0.8257, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8207, device='cuda:0')
+{'Epoch': 25, 'train_loss': 0.32579191997647283, 'end_of_epoch_lr': 0.3024620008298634, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8257, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8207, device='cuda:0')}
+24it [00:40,  1.67s/it]
+Val Epoch Loss is 0.22432203528781733
+Val Acc (Non Deformation):  tensor(0.9470, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9221, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9703, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6698, device='cuda:0')
+20it [01:05,  3.27s/it]
+Epoch 26/50, Train Epoch Loss is 0.31742806285619735, end of epoch LR is 0.2863474675195198
+Train F1 score (Non Deformation):  tensor(0.8319, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8251, device='cuda:0')
+{'Epoch': 26, 'train_loss': 0.31742806285619735, 'end_of_epoch_lr': 0.2863474675195198, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8319, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8251, device='cuda:0')}
+24it [00:39,  1.65s/it]
+Val Epoch Loss is 0.21496575263639292
+Val Acc (Non Deformation):  tensor(0.9507, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9221, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9723, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6843, device='cuda:0')
+20it [01:04,  3.24s/it]
+Epoch 27/50, Train Epoch Loss is 0.31894864290952685, end of epoch LR is 0.26981617334347935
+Train F1 score (Non Deformation):  tensor(0.8270, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8275, device='cuda:0')
+{'Epoch': 27, 'train_loss': 0.31894864290952685, 'end_of_epoch_lr': 0.26981617334347935, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8270, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8275, device='cuda:0')}
+24it [00:40,  1.68s/it]
+Val Epoch Loss is 0.18992217195530733
+Val Acc (Non Deformation):  tensor(0.9603, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9221, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9773, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.7245, device='cuda:0')
+19it [01:00,  3.19s/it]
+Epoch 28/50, Train Epoch Loss is 0.3247633474437814, end of epoch LR is 0.2529700392275505
+Train F1 score (Non Deformation):  tensor(0.8196, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8331, device='cuda:0')
+{'Epoch': 28, 'train_loss': 0.3247633474437814, 'end_of_epoch_lr': 0.2529700392275505, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8196, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8331, device='cuda:0')}
+24it [00:40,  1.67s/it]
+Val Epoch Loss is 0.25355627822379273
+Val Acc (Non Deformation):  tensor(0.9412, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9286, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9675, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6515, device='cuda:0')
+20it [01:04,  3.21s/it]
+Epoch 29/50, Train Epoch Loss is 0.3171432949602604, end of epoch LR is 0.2359129271904661
+Train F1 score (Non Deformation):  tensor(0.8244, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8334, device='cuda:0')
+{'Epoch': 29, 'train_loss': 0.3171432949602604, 'end_of_epoch_lr': 0.2359129271904661, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8244, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8334, device='cuda:0')}
+24it [00:39,  1.66s/it]
+Val Epoch Loss is 0.2148094636698564
+Val Acc (Non Deformation):  tensor(0.9528, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9221, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9734, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6927, device='cuda:0')
+64it [01:33,  1.46s/it]
+Test Acc (Non-Def) is: 0.9594459533691406
+Test Acc (Def) is: 0.5304518938064575
+Test F1 Score (Non-Def) is: 0.9597662687301636
+Test F1 Score (Def) is: 0.5283757448196411
+Saving checkpoint
+20it [01:03,  3.15s/it]
+Epoch 30/50, Train Epoch Loss is 0.31060413345694543, end of epoch LR is 0.21875
+Train F1 score (Non Deformation):  tensor(0.8316, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8309, device='cuda:0')
+{'Epoch': 30, 'train_loss': 0.31060413345694543, 'end_of_epoch_lr': 0.21875, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8316, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8309, device='cuda:0')}
+24it [00:39,  1.64s/it]
+Val Epoch Loss is 0.22999515756964684
+Val Acc (Non Deformation):  tensor(0.9474, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9286, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9707, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6745, device='cuda:0')
+20it [01:04,  3.21s/it]
+Epoch 31/50, Train Epoch Loss is 0.30833434090018275, end of epoch LR is 0.20158707280953395
+Train F1 score (Non Deformation):  tensor(0.8455, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8401, device='cuda:0')
+{'Epoch': 31, 'train_loss': 0.30833434090018275, 'end_of_epoch_lr': 0.20158707280953395, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8455, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8401, device='cuda:0')}
+24it [00:40,  1.67s/it]
+Val Epoch Loss is 0.1767508595560988
+Val Acc (Non Deformation):  tensor(0.9627, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9221, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9785, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.7358, device='cuda:0')
+19it [01:02,  3.27s/it]
+Epoch 32/50, Train Epoch Loss is 0.31671298883463206, end of epoch LR is 0.18452996077244954
+Train F1 score (Non Deformation):  tensor(0.8129, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8326, device='cuda:0')
+{'Epoch': 32, 'train_loss': 0.31671298883463206, 'end_of_epoch_lr': 0.18452996077244954, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8129, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8326, device='cuda:0')}
+24it [00:38,  1.60s/it]
+Val Epoch Loss is 0.22818855879207453
+Val Acc (Non Deformation):  tensor(0.9462, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9286, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9701, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6698, device='cuda:0')
+19it [01:00,  3.20s/it]
+Epoch 33/50, Train Epoch Loss is 0.31391061764014394, end of epoch LR is 0.1676838266565207
+Train F1 score (Non Deformation):  tensor(0.8283, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8209, device='cuda:0')
+{'Epoch': 33, 'train_loss': 0.31391061764014394, 'end_of_epoch_lr': 0.1676838266565207, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8283, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8209, device='cuda:0')}
+24it [00:40,  1.71s/it]
+Val Epoch Loss is 0.2565420276174943
+Val Acc (Non Deformation):  tensor(0.9392, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9351, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9666, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6472, device='cuda:0')
+20it [01:04,  3.24s/it]
+Epoch 34/50, Train Epoch Loss is 0.3146318823099136, end of epoch LR is 0.15115253248048027
+Train F1 score (Non Deformation):  tensor(0.8315, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8265, device='cuda:0')
+{'Epoch': 34, 'train_loss': 0.3146318823099136, 'end_of_epoch_lr': 0.15115253248048027, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8315, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8265, device='cuda:0')}
+24it [00:38,  1.62s/it]
+Val Epoch Loss is 0.19553808930019537
+Val Acc (Non Deformation):  tensor(0.9586, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9221, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9764, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.7172, device='cuda:0')
+20it [01:05,  3.27s/it]
+Epoch 35/50, Train Epoch Loss is 0.3288207322359085, end of epoch LR is 0.13503799917013662
+Train F1 score (Non Deformation):  tensor(0.8208, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8229, device='cuda:0')
+{'Epoch': 35, 'train_loss': 0.3288207322359085, 'end_of_epoch_lr': 0.13503799917013662, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8208, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8229, device='cuda:0')}
+24it [00:40,  1.67s/it]
+Val Epoch Loss is 0.21281523319582143
+Val Acc (Non Deformation):  tensor(0.9512, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9221, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9725, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6860, device='cuda:0')
+20it [01:04,  3.22s/it]
+Epoch 36/50, Train Epoch Loss is 0.3093333587050438, end of epoch LR is 0.11943957818197415
+Train F1 score (Non Deformation):  tensor(0.8272, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8162, device='cuda:0')
+{'Epoch': 36, 'train_loss': 0.3093333587050438, 'end_of_epoch_lr': 0.11943957818197415, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8272, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8162, device='cuda:0')}
+24it [00:39,  1.63s/it]
+Val Epoch Loss is 0.21359967812895775
+Val Acc (Non Deformation):  tensor(0.9507, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9221, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9723, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6843, device='cuda:0')
+20it [01:03,  3.20s/it]
+Epoch 37/50, Train Epoch Loss is 0.3028425760567188, end of epoch LR is 0.1044534389683862
+Train F1 score (Non Deformation):  tensor(0.8339, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8171, device='cuda:0')
+{'Epoch': 37, 'train_loss': 0.3028425760567188, 'end_of_epoch_lr': 0.1044534389683862, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8339, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8171, device='cuda:0')}
+24it [00:40,  1.70s/it]
+Val Epoch Loss is 0.21046094223856926
+Val Acc (Non Deformation):  tensor(0.9507, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9221, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9723, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6843, device='cuda:0')
+20it [01:03,  3.17s/it]
+Epoch 38/50, Train Epoch Loss is 0.3209545388817787, end of epoch LR is 0.09017197606102152
+Train F1 score (Non Deformation):  tensor(0.8218, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8184, device='cuda:0')
+{'Epoch': 38, 'train_loss': 0.3209545388817787, 'end_of_epoch_lr': 0.09017197606102152, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8218, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8184, device='cuda:0')}
+24it [00:41,  1.74s/it]
+Val Epoch Loss is 0.2276356810082992
+Val Acc (Non Deformation):  tensor(0.9466, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9286, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9703, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6714, device='cuda:0')
+20it [01:03,  3.20s/it]
+Epoch 39/50, Train Epoch Loss is 0.31761794686317446, end of epoch LR is 0.07668323942777235
+Train F1 score (Non Deformation):  tensor(0.8270, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8428, device='cuda:0')
+{'Epoch': 39, 'train_loss': 0.31761794686317446, 'end_of_epoch_lr': 0.07668323942777235, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8270, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8428, device='cuda:0')}
+24it [00:38,  1.62s/it]
+Val Epoch Loss is 0.20832475430021682
+Val Acc (Non Deformation):  tensor(0.9516, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9221, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9727, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6877, device='cuda:0')
+64it [01:33,  1.45s/it]
+Test Acc (Non-Def) is: 0.9589452743530273
+Test Acc (Def) is: 0.5304518938064575
+Test F1 Score (Non-Def) is: 0.9595057368278503
+Test F1 Score (Def) is: 0.5268293023109436
+Saving checkpoint
+20it [01:03,  3.16s/it]
+Epoch 40/50, Train Epoch Loss is 0.3221735067665577, end of epoch LR is 0.06407039161544274
+Train F1 score (Non Deformation):  tensor(0.8169, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8240, device='cuda:0')
+{'Epoch': 40, 'train_loss': 0.3221735067665577, 'end_of_epoch_lr': 0.06407039161544274, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8169, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8240, device='cuda:0')}
+24it [00:41,  1.73s/it]
+Val Epoch Loss is 0.23907577681044737
+Val Acc (Non Deformation):  tensor(0.9441, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9286, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9690, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6620, device='cuda:0')
+21it [01:06,  3.17s/it]
+Epoch 41/50, Train Epoch Loss is 0.3170247624317805, end of epoch LR is 0.05241119502499324
+Train F1 score (Non Deformation):  tensor(0.8256, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8144, device='cuda:0')
+{'Epoch': 41, 'train_loss': 0.3170247624317805, 'end_of_epoch_lr': 0.05241119502499324, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8256, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8144, device='cuda:0')}
+24it [00:39,  1.65s/it]
+Val Epoch Loss is 0.2152661501119534
+Val Acc (Non Deformation):  tensor(0.9474, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9221, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9705, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6714, device='cuda:0')
+20it [01:04,  3.20s/it]
+Epoch 42/50, Train Epoch Loss is 0.3068809524178505, end of epoch LR is 0.04177753248048027
+Train F1 score (Non Deformation):  tensor(0.8424, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8215, device='cuda:0')
+{'Epoch': 42, 'train_loss': 0.3068809524178505, 'end_of_epoch_lr': 0.04177753248048027, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8424, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8215, device='cuda:0')}
+24it [00:39,  1.66s/it]
+Val Epoch Loss is 0.22268555810054144
+Val Acc (Non Deformation):  tensor(0.9462, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9286, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9701, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6698, device='cuda:0')
+20it [01:04,  3.22s/it]
+Epoch 43/50, Train Epoch Loss is 0.3091606579720974, end of epoch LR is 0.032234964047542336
+Train F1 score (Non Deformation):  tensor(0.8341, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8292, device='cuda:0')
+{'Epoch': 43, 'train_loss': 0.3091606579720974, 'end_of_epoch_lr': 0.032234964047542336, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8341, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8292, device='cuda:0')}
+24it [00:39,  1.66s/it]
+Val Epoch Loss is 0.2172650353362163
+Val Acc (Non Deformation):  tensor(0.9470, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9221, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9703, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6698, device='cuda:0')
+20it [01:03,  3.20s/it]
+Epoch 44/50, Train Epoch Loss is 0.3038973681628704, end of epoch LR is 0.023842322833794546
+Train F1 score (Non Deformation):  tensor(0.8281, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8272, device='cuda:0')
+{'Epoch': 44, 'train_loss': 0.3038973681628704, 'end_of_epoch_lr': 0.023842322833794546, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8281, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8272, device='cuda:0')}
+24it [00:39,  1.64s/it]
+Val Epoch Loss is 0.21634368350108465
+Val Acc (Non Deformation):  tensor(0.9470, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9221, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9703, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6698, device='cuda:0')
+19it [01:00,  3.16s/it]
+Epoch 45/50, Train Epoch Loss is 0.31988886626143204, end of epoch LR is 0.016651352263156026
+Train F1 score (Non Deformation):  tensor(0.8158, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8241, device='cuda:0')
+{'Epoch': 45, 'train_loss': 0.31988886626143204, 'end_of_epoch_lr': 0.016651352263156026, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8158, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8241, device='cuda:0')}
+24it [00:40,  1.70s/it]
+Val Epoch Loss is 0.20141059812158346
+Val Acc (Non Deformation):  tensor(0.9532, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9221, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9736, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6944, device='cuda:0')
+20it [01:04,  3.20s/it]
+Epoch 46/50, Train Epoch Loss is 0.30385820418596265, end of epoch LR is 0.010706387060435165
+Train F1 score (Non Deformation):  tensor(0.8363, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8396, device='cuda:0')
+{'Epoch': 46, 'train_loss': 0.30385820418596265, 'end_of_epoch_lr': 0.010706387060435165, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8363, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8396, device='cuda:0')}
+24it [00:40,  1.67s/it]
+Val Epoch Loss is 0.21954934485256672
+Val Acc (Non Deformation):  tensor(0.9466, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9286, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9703, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6714, device='cuda:0')
+20it [01:04,  3.22s/it]
+Epoch 47/50, Train Epoch Loss is 0.29377765133976935, end of epoch LR is 0.006044079913008253
+Train F1 score (Non Deformation):  tensor(0.8513, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8584, device='cuda:0')
+{'Epoch': 47, 'train_loss': 0.29377765133976935, 'end_of_epoch_lr': 0.006044079913008253, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8513, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8584, device='cuda:0')}
+24it [00:40,  1.67s/it]
+Val Epoch Loss is 0.23107759468257427
+Val Acc (Non Deformation):  tensor(0.9445, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9286, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9692, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6636, device='cuda:0')
+20it [01:03,  3.18s/it]
+Epoch 48/50, Train Epoch Loss is 0.30066014230251314, end of epoch LR is 0.002693175494813637
+Train F1 score (Non Deformation):  tensor(0.8330, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8383, device='cuda:0')
+{'Epoch': 48, 'train_loss': 0.30066014230251314, 'end_of_epoch_lr': 0.002693175494813637, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8330, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8383, device='cuda:0')}
+24it [00:40,  1.69s/it]
+Val Epoch Loss is 0.22404937942822775
+Val Acc (Non Deformation):  tensor(0.9458, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9286, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9699, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6682, device='cuda:0')
+20it [01:06,  3.34s/it]
+Epoch 49/50, Train Epoch Loss is 0.3144577957689762, end of epoch LR is 0.0006743332458782579
+Train F1 score (Non Deformation):  tensor(0.8307, device='cuda:0')
+Train F1 score (Deformation):  tensor(0.8309, device='cuda:0')
+{'Epoch': 49, 'train_loss': 0.3144577957689762, 'end_of_epoch_lr': 0.0006743332458782579, 'Train MulticlassF1Score Class: Non Deformation': tensor(0.8307, device='cuda:0'), 'Train MulticlassF1Score Class: Deformation': tensor(0.8309, device='cuda:0')}
+24it [00:41,  1.71s/it]
+Val Epoch Loss is 0.22366647919019064
+Val Acc (Non Deformation):  tensor(0.9454, device='cuda:0')
+Val Acc (Deformation):  tensor(0.9286, device='cuda:0')
+Val F1 score (Non Deformation):  tensor(0.9696, device='cuda:0')
+Val F1 score (Deformation):  tensor(0.6667, device='cuda:0')
+64it [01:33,  1.46s/it]
+Test Acc (Non-Def) is: 0.9522696733474731
+Test Acc (Def) is: 0.5481336116790771
+Test F1 Score (Non-Def) is: 0.9567404985427856
+Test F1 Score (Def) is: 0.5195530652999878
+Saving checkpoint

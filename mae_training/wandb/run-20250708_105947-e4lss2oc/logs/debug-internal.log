@@ -1,0 +1,18 @@
+{"time":"2025-07-08T10:59:48.082031857+12:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/wandb/run-20250708_105947-e4lss2oc/logs/debug-core.log"}
+{"time":"2025-07-08T10:59:48.521740923+12:00","level":"INFO","msg":"stream: created new stream","id":"e4lss2oc"}
+{"time":"2025-07-08T10:59:48.521764489+12:00","level":"INFO","msg":"stream: started","id":"e4lss2oc"}
+{"time":"2025-07-08T10:59:48.52177392+12:00","level":"INFO","msg":"writer: Do: started","stream_id":"e4lss2oc"}
+{"time":"2025-07-08T10:59:48.521853872+12:00","level":"INFO","msg":"handler: started","stream_id":"e4lss2oc"}
+{"time":"2025-07-08T10:59:48.521879625+12:00","level":"INFO","msg":"sender: started","stream_id":"e4lss2oc"}
+{"time":"2025-07-08T10:59:48.876025806+12:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-08T15:02:49.558344117+12:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/conradp-burton-gns-science/Hephaestus-minicubes-MAE-pretrain/e4lss2oc/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-07-08T21:50:27.550374613+12:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-08T21:50:27.550467049+12:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-08T21:50:28.552323155+12:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact mae_vit_base_patch16_epochs_600_blr_0.00015","runtime_seconds":1.00404536},{"desc":"uploading output.log","runtime_seconds":0.667771293,"progress":"226.0KB/226.0KB"}],"total_operations":2}}
+{"time":"2025-07-08T21:51:28.586508973+12:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact mae_vit_base_patch16_epochs_600_blr_0.00015","runtime_seconds":61.038227738,"subtasks":[{"desc":"mae_vit_base_patch16_epochs_600.pt","runtime_seconds":59.952175712,"progress":"1.06GB/1.25GB"}]}],"total_operations":1}}
+{"time":"2025-07-08T21:51:41.008025276+12:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-08T21:51:41.627396355+12:00","level":"INFO","msg":"stream: closing","id":"e4lss2oc"}
+{"time":"2025-07-08T21:51:41.627404904+12:00","level":"INFO","msg":"handler: closed","stream_id":"e4lss2oc"}
+{"time":"2025-07-08T21:51:41.627410415+12:00","level":"INFO","msg":"writer: Close: closed","stream_id":"e4lss2oc"}
+{"time":"2025-07-08T21:51:41.627413646+12:00","level":"INFO","msg":"sender: closed","stream_id":"e4lss2oc"}
+{"time":"2025-07-08T21:51:41.627565835+12:00","level":"INFO","msg":"stream: closed","id":"e4lss2oc"}

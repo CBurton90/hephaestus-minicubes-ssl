@@ -1,0 +1,7 @@
+{"time":"2025-07-16T10:58:37.900917821+12:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/wandb/run-20250716_105837-4z7ixyti/logs/debug-core.log"}
+{"time":"2025-07-16T10:58:38.326274416+12:00","level":"INFO","msg":"stream: created new stream","id":"4z7ixyti"}
+{"time":"2025-07-16T10:58:38.326294231+12:00","level":"INFO","msg":"stream: started","id":"4z7ixyti"}
+{"time":"2025-07-16T10:58:38.326305199+12:00","level":"INFO","msg":"handler: started","stream_id":"4z7ixyti"}
+{"time":"2025-07-16T10:58:38.326329249+12:00","level":"INFO","msg":"sender: started","stream_id":"4z7ixyti"}
+{"time":"2025-07-16T10:58:38.326341001+12:00","level":"INFO","msg":"writer: Do: started","stream_id":"4z7ixyti"}
+{"time":"2025-07-16T10:58:38.837723568+12:00","level":"INFO","msg":"Starting system monitor"}

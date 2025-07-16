@@ -1,0 +1,15 @@
+{"time":"2025-07-16T10:55:02.860438452+12:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/wandb/run-20250716_105502-ioxeeuls/logs/debug-core.log"}
+{"time":"2025-07-16T10:55:03.281253768+12:00","level":"INFO","msg":"stream: created new stream","id":"ioxeeuls"}
+{"time":"2025-07-16T10:55:03.281273005+12:00","level":"INFO","msg":"stream: started","id":"ioxeeuls"}
+{"time":"2025-07-16T10:55:03.281356884+12:00","level":"INFO","msg":"writer: Do: started","stream_id":"ioxeeuls"}
+{"time":"2025-07-16T10:55:03.281459028+12:00","level":"INFO","msg":"sender: started","stream_id":"ioxeeuls"}
+{"time":"2025-07-16T10:55:03.281483658+12:00","level":"INFO","msg":"handler: started","stream_id":"ioxeeuls"}
+{"time":"2025-07-16T10:55:04.76103661+12:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-16T10:55:18.863524569+12:00","level":"INFO","msg":"stream: closing","id":"ioxeeuls"}
+{"time":"2025-07-16T10:55:18.86358917+12:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-16T10:55:18.863640447+12:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-16T10:55:19.714477557+12:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-16T10:55:20.262598144+12:00","level":"INFO","msg":"handler: closed","stream_id":"ioxeeuls"}
+{"time":"2025-07-16T10:55:20.262615358+12:00","level":"INFO","msg":"writer: Close: closed","stream_id":"ioxeeuls"}
+{"time":"2025-07-16T10:55:20.262692271+12:00","level":"INFO","msg":"sender: closed","stream_id":"ioxeeuls"}
+{"time":"2025-07-16T10:55:20.263261442+12:00","level":"INFO","msg":"stream: closed","id":"ioxeeuls"}

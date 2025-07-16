@@ -15,11 +15,16 @@ from tqdm import tqdm
 from typing import Iterable, Optional
 
 import torch
+from torcheval.metrics import MulticlassF1Score, MulticlassAUPRC, MulticlassAUROC
 
 from timm.data import Mixup
 from timm.utils import accuracy
 
 from . import lr_sched
+import utilities.utils as utils
+
+
+class_dict = {0: "Non Deformation", 1: "Deformation"}
 
 
 def train_one_epoch(model: torch.nn.Module, criterion: torch.nn.Module,
@@ -27,9 +32,15 @@ def train_one_epoch(model: torch.nn.Module, criterion: torch.nn.Module,
                     device: torch.device, epoch: int, loss_scaler, max_norm: float = 0,
                     mixup_fn: Optional[Mixup] = None, log_writer=None,
                     config=None):
+
     model.train(True)
+
+    f1 = MulticlassF1Score(num_classes=2, average=None).to(device) # f1 per class
+    f1.reset()
+
     running_loss = 0
     counts = 0
+    image_log = {}
     # metric_logger = misc.MetricLogger(delimiter="  ")
     # metric_logger.add_meter('lr', misc.SmoothedValue(window_size=1, fmt='{value:.6f}'))
     header = 'Epoch: [{}]'.format(epoch)
@@ -65,8 +76,12 @@ def train_one_epoch(model: torch.nn.Module, criterion: torch.nn.Module,
 
         loss_value = loss.item()
 
-        running_loss += loss.detach().cpu().numpy()
+        running_loss += loss.item()
         counts += 1
+
+        preds = torch.argmax(outputs, dim=1)
+        f1.update(preds, targets)
+        
 
         if not math.isfinite(loss_value):
             print("Loss is {}, stopping training".format(loss_value))
@@ -94,6 +109,10 @@ def train_one_epoch(model: torch.nn.Module, criterion: torch.nn.Module,
 
         # metric_logger.update(lr=max_lr)
 
+        if config.wandb.wandb:
+            if not image_log:
+                image_log = utils.log_image(image_log, samples, model, targets, y=outputs, mode='linprobe')
+
         # loss_value_reduce = misc.all_reduce_mean(loss_value)
         if log_writer is not None and (data_iter_step + 1) % accum_iter == 0:
             """ We use epoch_1000x as the x-axis in tensorboard.
@@ -104,17 +123,26 @@ def train_one_epoch(model: torch.nn.Module, criterion: torch.nn.Module,
             log_writer.add_scalar('lr', max_lr, epoch_1000x)
 
     epoch_loss = running_loss / counts
+    eob_lr = optimizer.param_groups[0]["lr"]
+    f1_scores = f1.compute()
+
+    log_dict = {'Epoch': epoch, 'train_loss': epoch_loss, 'end_of_epoch_lr': eob_lr}
+    for idx in range(f1_scores.shape[0]):
+            log_dict['Train ' + f1.__class__.__name__ + ' Class: ' + class_dict[idx]] = f1_scores[idx]
+
+    print(f'Epoch {epoch}/{config.train.epochs}, Train Epoch Loss is {log_dict["train_loss"]}, end of epoch LR is {log_dict["end_of_epoch_lr"]}')
+    print('Train F1 score (Non Deformation): ', f1_scores[0])
+    print('Train F1 score (Deformation): ', f1_scores[1])
 
     # gather the stats from all processes
     # metric_logger.synchronize_between_processes()
     # print("Averaged stats:", metric_logger)
     # return {k: meter.global_avg for k, meter in metric_logger.meters.items()}
-    return epoch_loss
+    return log_dict, image_log
 
 
 @torch.no_grad()
-def evaluate(data_loader, model, device):
-    criterion = torch.nn.CrossEntropyLoss()
+def evaluate(data_loader, model, criterion, device, phase='Val', epoch=None):
 
     # metric_logger = misc.MetricLogger(delimiter="  ")
     # header = 'Test:'
@@ -128,27 +156,70 @@ def evaluate(data_loader, model, device):
     probs = []
     labels =  []
 
+    metrics = utils.initialize_metrics()
+    for metric in metrics:
+        metric.reset()
+        metric.to(device)
+
     # for batch in metric_logger.log_every(data_loader, 10, header):
-    for it, batch in tqdm(enumerate(data_loader), total=len(data_loader)):
-        images = batch[0]
-        target = batch[-1]
-        images = images.to(device, non_blocking=True)
-        target = target.to(device, non_blocking=True)
+    # for it, batch in tqdm(enumerate(data_loader), total=len(data_loader)):
+    for data_iter_step, (samples, targets, descript) in tqdm(enumerate(data_loader)):
+        # images = batch[0]
+        # target = batch[-1]
+        samples = samples.to(device, non_blocking=True)
+        targets = targets.to(device, non_blocking=True)
+
+        samples = samples[:, :3, :, :]
 
         # compute output
         with torch.cuda.amp.autocast():
-            output = model(images)
-            loss = criterion(output, target)
+            output = model(samples)
+            loss = criterion(output, targets)
+
+        preds = torch.argmax(output, dim=1)
+
+        for metric in metrics:
+            if not isinstance(metric, (MulticlassAUPRC, MulticlassAUROC)):
+                metric.update(preds, targets)
+            else:
+                metric.update(output, targets)
 
         running_loss += loss.item()
         counts += 1
         sftmx = torch.nn.Softmax()(output)
         probs.append(sftmx)
-        labels.append(target)
+        labels.append(targets)
 
-        acc1, = accuracy(output, target, topk=(1,))
+        acc1, = accuracy(output, targets, topk=(1,))
 
         running_acc += acc1.item()
+
+    epoch_loss = running_loss / counts
+
+    if phase == 'Val':
+        log_dict = {'Epoch': epoch, 'val_loss': epoch_loss}
+    
+    metrics_vals = {}
+
+    for metric in metrics:
+        scores = metric.compute()
+        metrics_vals[metric.__class__.__name__] = scores # test results dict
+        if phase == 'Val':
+            for idx in range(scores.shape[0]):
+                log_dict['Val '+ metric.__class__.__name__ + ' Class: ' + class_dict[idx]] = scores[idx] # val results dict
+        else:
+            continue
+
+    if phase == 'Val':
+        print(f'Val Epoch Loss is {log_dict["val_loss"]}')
+        print('Val Acc (Non Deformation): ', log_dict['Val '+ 'MulticlassAccuracy' + ' Class: ' + class_dict[0]])
+        print('Val Acc (Deformation): ', log_dict['Val '+ 'MulticlassAccuracy' + ' Class: ' + class_dict[1]])
+        print('Val F1 score (Non Deformation): ', log_dict['Val '+ 'MulticlassF1Score' + ' Class: ' + class_dict[0]])
+        print('Val F1 score (Deformation): ', log_dict['Val '+ 'MulticlassF1Score' + ' Class: ' + class_dict[1]])
+
+
+
+        
 
     #     batch_size = images.shape[0]
     #     metric_logger.update(loss=loss.item())
@@ -160,4 +231,7 @@ def evaluate(data_loader, model, device):
     #       .format(top1=metric_logger.acc1, top5=metric_logger.acc5, losses=metric_logger.loss))
 
     # return {k: meter.global_avg for k, meter in metric_logger.meters.items()}
-    return running_acc, running_loss, counts, torch.stack(probs).reshape(-1,2)[:,1], torch.stack(labels).reshape(-1)
+    if phase == 'Test':
+        return metrics_vals
+    else:
+        return log_dict

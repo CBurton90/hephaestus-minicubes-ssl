@@ -1,0 +1,94 @@
+[dataloader]
+# random seed
+seed = 42
+
+# webdataset config
+webdataset = true
+webdataset_root = '/scratch/SDF25/Imagery/Hephaestus_Minicubes_v0_webdataset/'
+webdataset_write_processes = 8
+webdataset_initial_buffer = 300
+webdataset_shuffle_size = 100
+num_workers = 8
+max_samples_per_shard = 128
+prefetch_factor = 2
+persistent_workers = false
+
+# insar specific
+geomorphology_channels = ["insar_difference", "insar_coherence", "dem"]
+atmospheric_channels =  ["total_column_water_vapour", "surface_pressure", "vertical_integral_of_temperature"]
+timeseries = false
+timeseries_length = 1
+timeseries_data = '../dataset/quality_timeseries.json'
+train_years = ["20140101", "20190531"] # matching hephaestsus publication, data included in pretraining
+val_years = ["20190601", "20191231"] # matching hephaestsus publication, data included in pretraining
+test_years = ["20200101", "20211231"] # matching hephaestsus publication, data not included in pretraining
+
+annotation_path = '../dataset/annotations.json'
+
+# data specific
+augment = true
+image_size = 512
+zarr_path = '/scratch/SDF25/Imagery/Hephaestus_Minicubes_v0/'
+mask_target = "union"
+task = 'classification'
+batch_size = 28
+num_classes = 2
+
+
+[augmentations]
+[augmentations.GaussianBlur]
+value = [0.1, 2.0]
+p = 0.3
+[augmentations.RandomResizedCrop]
+scale = [0.8, 1.0]
+interpolation = 1
+p = 0.3
+[augmentations.HorizontalFlip]
+p = 0.5
+[augmentations.VerticalFlip]
+p = 0.5
+[augmentations.RandomRotation]
+p = 0.6
+[augmentations.ElasticTransform]
+p = 0.0
+[augmentations.Cutout]
+p = 0.0
+[augmentations.MultNoise]
+p = 0.0
+[augmentations.GaussianNoise]
+p = 0.0
+
+
+[model]
+# ssl details
+ssl_method = 'mae'
+stage = 'e2e-finetuning' # one of pretraining, linprobe, or end to end finetuning (e2e-finetuning)
+
+# model architecture
+architecture = "ViT"
+model = "vit_large_patch16"
+
+# other
+global_pool = false
+drop_path_rate = 0.2
+layer_decay = 0.75
+checkpoint_load_path = 'checkpoints/mae/pretraining/mae_vit_large_patch16/vbe2p57j/mae_vit_large_patch16_epochs_800.pt'
+
+
+
+[train]
+# training specific
+device = 'cuda'
+criterion = 'crossentropyloss' # one of crossentropyloss or focalloss
+blr = 1e-3
+min_lr = 0
+weight_decay = 0.1
+epochs = 40
+warmup_epochs = 5
+
+
+[wandb]
+# weights and biases config
+wandb = true
+wandb_project = "Hephaestus-minicubes-MAE-e2e-finetune"
+wandb_entity = "conradp-burton-gns-science"

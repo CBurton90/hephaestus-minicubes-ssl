@@ -1,0 +1,17 @@
+{"time":"2025-07-14T21:39:16.057992784+12:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/wandb/run-20250714_213915-6qgjxke6/logs/debug-core.log"}
+{"time":"2025-07-14T21:39:16.506740801+12:00","level":"INFO","msg":"stream: created new stream","id":"6qgjxke6"}
+{"time":"2025-07-14T21:39:16.506760112+12:00","level":"INFO","msg":"stream: started","id":"6qgjxke6"}
+{"time":"2025-07-14T21:39:16.506840862+12:00","level":"INFO","msg":"writer: Do: started","stream_id":"6qgjxke6"}
+{"time":"2025-07-14T21:39:16.50694124+12:00","level":"INFO","msg":"handler: started","stream_id":"6qgjxke6"}
+{"time":"2025-07-14T21:39:16.506964256+12:00","level":"INFO","msg":"sender: started","stream_id":"6qgjxke6"}
+{"time":"2025-07-14T21:39:16.912872517+12:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-14T22:56:33.427763137+12:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-14T22:56:33.42785988+12:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-14T22:56:34.429702782+12:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact vit_large_patch16_epochs_40_blr_1_focalloss_linprobe","runtime_seconds":1.003672509}],"total_operations":1}}
+{"time":"2025-07-14T22:57:34.463673039+12:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact vit_large_patch16_epochs_40_blr_1_focalloss_linprobe","runtime_seconds":61.037642068,"subtasks":[{"desc":"vit_large_patch16_epochs_40_blr_1_focalloss_linprobe.pt","runtime_seconds":59.859495002,"progress":"1.02GB/1.13GB"}]}],"total_operations":1}}
+{"time":"2025-07-14T22:57:42.826595705+12:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-14T22:57:43.19257087+12:00","level":"INFO","msg":"stream: closing","id":"6qgjxke6"}
+{"time":"2025-07-14T22:57:43.192580086+12:00","level":"INFO","msg":"handler: closed","stream_id":"6qgjxke6"}
+{"time":"2025-07-14T22:57:43.192584941+12:00","level":"INFO","msg":"writer: Close: closed","stream_id":"6qgjxke6"}
+{"time":"2025-07-14T22:57:43.192587567+12:00","level":"INFO","msg":"sender: closed","stream_id":"6qgjxke6"}
+{"time":"2025-07-14T22:57:43.192707845+12:00","level":"INFO","msg":"stream: closed","id":"6qgjxke6"}

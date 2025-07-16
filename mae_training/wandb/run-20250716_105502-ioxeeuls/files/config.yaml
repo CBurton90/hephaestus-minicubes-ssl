@@ -1,0 +1,121 @@
+_wandb:
+    value:
+        cli_version: 0.20.1
+        m: []
+        python_version: 3.11.13
+        t:
+            "1":
+                - 1
+                - 30
+                - 41
+                - 49
+                - 63
+                - 80
+            "2":
+                - 1
+                - 30
+                - 41
+                - 49
+                - 63
+                - 80
+            "3":
+                - 14
+                - 16
+                - 55
+            "4": 3.11.13
+            "5": 0.20.1
+            "10":
+                - 20
+            "12": 0.20.1
+            "13": linux-x86_64
+augmentations:
+    value:
+        Cutout:
+            p: 0
+        ElasticTransform:
+            p: 0
+        GaussianBlur:
+            p: 0
+            value:
+                - 0.1
+                - 2
+        GaussianNoise:
+            p: 0
+        HorizontalFlip:
+            p: 0.5
+        MultNoise:
+            p: 0
+        RandomResizedCrop:
+            interpolation: 1
+            p: 0.3
+            scale:
+                - 0.8
+                - 1
+        RandomRotation:
+            p: 0.6
+        VerticalFlip:
+            p: 0.5
+dataloader:
+    value:
+        annotation_path: ../dataset/annotations.json
+        atmospheric_channels:
+            - total_column_water_vapour
+            - surface_pressure
+            - vertical_integral_of_temperature
+        augment: true
+        batch_size: 64
+        geomorphology_channels:
+            - insar_difference
+            - insar_coherence
+            - dem
+        image_size: 512
+        mask_target: union
+        max_samples_per_shard: 128
+        num_classes: 2
+        num_workers: 8
+        persistent_workers: false
+        prefetch_factor: 2
+        seed: 42
+        task: classification
+        test_years:
+            - "20200101"
+            - "20211231"
+        timeseries: false
+        timeseries_data: ../dataset/quality_timeseries.json
+        timeseries_length: 1
+        train_years:
+            - "20140101"
+            - "20190531"
+        val_years:
+            - "20190601"
+            - "20191231"
+        webdataset: true
+        webdataset_initial_buffer: 300
+        webdataset_root: /scratch/SDF25/Imagery/Hephaestus_Minicubes_v0_webdataset/
+        webdataset_shuffle_size: 100
+        webdataset_write_processes: 8
+        zarr_path: /scratch/SDF25/Imagery/Hephaestus_Minicubes_v0/
+model:
+    value:
+        architecture: ViT
+        checkpoint_load_path: checkpoints/mae/pretraining/mae_vit_large_patch16/vbe2p57j/mae_vit_large_patch16_epochs_800.pt
+        drop_path_rate: 0.1
+        global_pool: false
+        layer_decay: 0.75
+        model: vit_large_patch16
+        ssl_method: mae
+        stage: e2e-finetuning
+train:
+    value:
+        blr: 0.001
+        criterion: crossentropyloss
+        device: cuda
+        epochs: 50
+        min_lr: 0
+        warmup_epochs: 5
+        weight_decay: 0.05
+wandb:
+    value:
+        wandb: true
+        wandb_entity: conradp-burton-gns-science
+        wandb_project: Hephaestus-minicubes-MAE-e2e-finetune

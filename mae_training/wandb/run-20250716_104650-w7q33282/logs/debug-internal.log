@@ -1,0 +1,15 @@
+{"time":"2025-07-16T10:46:50.388482759+12:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/share/home/conradb/git/hephaestus-minicubes-ssl/mae_training/wandb/run-20250716_104650-w7q33282/logs/debug-core.log"}
+{"time":"2025-07-16T10:46:50.807948702+12:00","level":"INFO","msg":"stream: created new stream","id":"w7q33282"}
+{"time":"2025-07-16T10:46:50.80796762+12:00","level":"INFO","msg":"stream: started","id":"w7q33282"}
+{"time":"2025-07-16T10:46:50.808058472+12:00","level":"INFO","msg":"writer: Do: started","stream_id":"w7q33282"}
+{"time":"2025-07-16T10:46:50.808156356+12:00","level":"INFO","msg":"handler: started","stream_id":"w7q33282"}
+{"time":"2025-07-16T10:46:50.808178027+12:00","level":"INFO","msg":"sender: started","stream_id":"w7q33282"}
+{"time":"2025-07-16T10:46:51.147283905+12:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-16T10:46:57.597985027+12:00","level":"INFO","msg":"stream: closing","id":"w7q33282"}
+{"time":"2025-07-16T10:46:57.598055992+12:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-16T10:46:57.598103366+12:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-16T10:46:58.397665771+12:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-16T10:46:58.874192159+12:00","level":"INFO","msg":"handler: closed","stream_id":"w7q33282"}
+{"time":"2025-07-16T10:46:58.874210312+12:00","level":"INFO","msg":"writer: Close: closed","stream_id":"w7q33282"}
+{"time":"2025-07-16T10:46:58.874282948+12:00","level":"INFO","msg":"sender: closed","stream_id":"w7q33282"}
+{"time":"2025-07-16T10:46:58.874805498+12:00","level":"INFO","msg":"stream: closed","id":"w7q33282"}
