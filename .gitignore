@@ -1,2 +1,4 @@
 *.pt
 *.pyc
+mae_training/wandb/**
+mae_training/submitit_logs/**

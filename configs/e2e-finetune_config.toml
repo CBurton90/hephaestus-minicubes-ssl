@@ -38,11 +38,11 @@ num_classes = 2
 [augmentations]
 [augmentations.GaussianBlur]
 value = [0.1, 2.0]
-p = 0.3
+p = 0.5
 [augmentations.RandomResizedCrop]
 scale = [0.8, 1.0]
 interpolation = 1
-p = 0.3
+p = 0.4
 [augmentations.HorizontalFlip]
 p = 0.5
 [augmentations.VerticalFlip]
@@ -80,9 +80,9 @@ checkpoint_load_path = 'checkpoints/mae/pretraining/mae_vit_large_patch16/vbe2p5
 # training specific
 device = 'cuda'
 criterion = 'crossentropyloss' # one of crossentropyloss or focalloss
-blr = 1e-3
+blr = 1e-4
 min_lr = 0
-weight_decay = 0.1
+weight_decay = 0.01
 epochs = 40
 warmup_epochs = 5
 
